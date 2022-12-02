@@ -12,12 +12,12 @@ export const Wishes = () => {
       </div>
 
       <div className={styles.wishesNumber}>
-        <h2 className={styles.index}>{index}</h2>
+        <h1 className={styles.index}>{index}</h1>
         <p className={styles.wishesText}>{wishesText}</p>
       </div>
 
       <div className={styles.wishesNumber}>
-        <h3 className={styles.index}>{index}</h3>
+        <h1 className={styles.index}>{index}</h1>
         <p className={styles.wishesText}>{wishesText}</p>
       </div>
     </div>
