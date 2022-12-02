@@ -4,7 +4,7 @@ import styles from './style.module.css';
 export const СoverCourseDescription = () => {
   const name = 'Название курса';
   return (
-    <div className={styles.skill__card}>
+    <div className={styles.skillCard}>
       <h1 className={styles.name}>{name}</h1>
     </div>
   );

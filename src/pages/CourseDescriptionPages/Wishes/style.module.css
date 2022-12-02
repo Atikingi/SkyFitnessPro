@@ -1,10 +1,10 @@
-.wishes__block {
+.wishesBlock {
   display: flex;
   gap: 80px;
   margin-bottom: 75px;
 }
 
-.wishes__number {
+.wishesNumber {
   width: 335px;
   height: 96px;
   display: flex;
@@ -21,7 +21,7 @@
   border-radius: 1202.29px;
   margin-right: 20px;
 }
-.wishes__text {
+.wishesText {
   width: 244px;
   height: 96px;
   font-family: "StratosSkyeng";

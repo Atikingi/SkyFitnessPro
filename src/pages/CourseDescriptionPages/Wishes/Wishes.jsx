@@ -5,20 +5,20 @@ export const Wishes = () => {
   const index = '1';
   const wishesText = 'Давно хотели попробовать йогу, но не решались начать.';
   return (
-    <div className={styles.wishes__block}>
-      <div className={styles.wishes__number}>
+    <div className={styles.wishesBlock}>
+      <div className={styles.wishesNumber}>
         <h1 className={styles.index}>{index}</h1>
-        <p className={styles.wishes__text}>{wishesText}</p>
+        <p className={styles.wishesText}>{wishesText}</p>
       </div>
 
-      <div className={styles.wishes__number}>
+      <div className={styles.wishesNumber}>
         <h1 className={styles.index}>{index}</h1>
-        <p className={styles.wishes__text}>{wishesText}</p>
+        <p className={styles.wishesText}>{wishesText}</p>
       </div>
 
-      <div className={styles.wishes__number}>
+      <div className={styles.wishesNumber}>
         <h1 className={styles.index}>{index}</h1>
-        <p className={styles.wishes__text}>{wishesText}</p>
+        <p className={styles.wishesText}>{wishesText}</p>
       </div>
     </div>
   );
