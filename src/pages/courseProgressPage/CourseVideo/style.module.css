@@ -1,0 +1,16 @@
+.container {
+    position: relative;
+    margin-bottom: 75px;
+}
+
+.playButton {
+    position: absolute;
+    top: 35%;
+    left: 42%;
+    cursor: pointer;
+    color: #FAFAFA;
+}
+
+.playButton:hover {
+    color: #bebebe;
+}
