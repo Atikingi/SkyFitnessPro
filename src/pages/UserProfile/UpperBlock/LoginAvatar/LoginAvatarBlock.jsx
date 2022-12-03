@@ -6,7 +6,7 @@ import styles from './style.module.css';
 
 const LoginAvatarBlock = () => {
   return (
-    <div className={styles.login_avatar_block}>
+    <div className={styles.loginAvatarBlock}>
       <Avatar />
       <Name />
       <Select />

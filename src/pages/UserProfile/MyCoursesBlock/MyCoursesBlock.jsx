@@ -4,7 +4,7 @@ import HeadingMyCourses from './HeadingMyCourses/HeadingMyCourses';
 import MyCoursesContent from './MyCoursesContent/MyCoursesContent';
 const MyCoursesBlock = () => {
   return (
-    <div className={styles.my_courses_block}>
+    <div className={styles.myCoursesBlock}>
       <HeadingMyCourses />
       <MyCoursesContent />
     </div>

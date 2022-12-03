@@ -4,7 +4,7 @@ import LoginAvatarBlock from './LoginAvatar/LoginAvatarBlock';
 import styles from './styles.module.css';
 const UpperBlock = () => {
   return (
-    <div className={styles.upper_block}>
+    <div className={styles.upperBlock}>
       <Logo />
       <LoginAvatarBlock />
     </div>

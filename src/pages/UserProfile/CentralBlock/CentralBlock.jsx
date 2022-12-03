@@ -5,7 +5,7 @@ import Buttons from './Buttons/Buttons';
 import styles from './styles.module.css';
 const CentralBlock = () => {
   return (
-    <div className={styles.central_block}>
+    <div className={styles.centralBlock}>
       <HeadingMyProfile />
       <UserData />
       <Buttons />

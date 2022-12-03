@@ -6,7 +6,7 @@ import styles from './style.module.css';
 const UserProfile = () => {
   return (
     <>
-      <div className={styles.user_profile}>
+      <div className={styles.userProfile}>
         <UpperBlock />
         <CentralBlock />
         <MyCoursesBlock />
