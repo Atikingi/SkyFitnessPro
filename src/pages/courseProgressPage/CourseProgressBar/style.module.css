@@ -15,13 +15,13 @@
 .orange {
   background: rgb(255, 109, 0);
   background: linear-gradient(90deg, rgba(255, 109, 0, 1) 45%, rgba(255, 242, 224, 1) 45%);
-  border: 2px solid #FF6D00;
+  border: 2px solid #ff6d00;
 }
 
 .purple {
   background: rgb(154, 72, 241);
   background: linear-gradient(90deg, rgba(154, 72, 241, 1) 45%, rgba(249, 235, 255, 1) 45%);
-  border: 2px solid #9A48F1;
+  border: 2px solid #9a48f1;
 }
 
 .percents {

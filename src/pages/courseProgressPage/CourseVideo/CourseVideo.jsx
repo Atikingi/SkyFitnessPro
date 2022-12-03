@@ -5,9 +5,11 @@ import PlayButtonIcon from '../../../components/icons/PlayButtonIcon';
 const CourseVideo = () => {
   return (
     <div className={styles.container}>
-      <img src="/img/video-preview.jpg" width="1160" height="639" alt="Видео тренировки" />
-      <div className={styles.playButton}>
-        <PlayButtonIcon />
+      <div className={styles.imageWrapper}>
+        <img src="/img/video-preview.jpg" width="1160" height="639" alt="Видео тренировки" />
+        <div className={styles.playButton}>
+          <PlayButtonIcon />
+        </div>
       </div>
     </div>
   );
