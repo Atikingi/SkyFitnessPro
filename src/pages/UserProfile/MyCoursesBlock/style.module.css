@@ -1,0 +1,4 @@
+.my_courses_block {
+  display: flex;
+  flex-direction: column;
+}
