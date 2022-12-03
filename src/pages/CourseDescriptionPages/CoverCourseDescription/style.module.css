@@ -1,0 +1,11 @@
+.skillCard {
+  width: 1160px;
+  height: 310px;
+  background-image: url(../../../../public/img/skill-card/skill-card.png);
+  background-size: 1160px 310px;
+  border-radius: 30px;
+}
+.name {
+  padding-top: 50px;
+  margin-left: 50px;
+}

@@ -1,0 +1,32 @@
+.wishesBlock {
+  display: flex;
+  gap: 80px;
+  margin-bottom: 75px;
+}
+
+.wishesNumber {
+  width: 335px;
+  height: 96px;
+  display: flex;
+}
+.index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10.687px;
+  width: 67px;
+  height: 67px;
+  background: #c7e957;
+  border-radius: 1202.29px;
+  margin-right: 20px;
+}
+.wishesText {
+  width: 244px;
+  height: 96px;
+  font-family: 'StratosSkyeng';
+  font-style: normal;
+  font-size: 24px;
+  line-height: 32px;
+  color: black;
+}

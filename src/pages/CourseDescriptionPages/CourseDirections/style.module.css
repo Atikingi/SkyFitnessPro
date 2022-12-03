@@ -1,0 +1,11 @@
+.list {
+  width: 700px;
+  font-family: 'StratosSkyeng';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+  column-count: 2;
+  gap: 130px;
+}

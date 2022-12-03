@@ -1,0 +1,25 @@
+.block {
+  background-image: url(../../../../public/img/skill-card/Frame.png);
+  background-size: 1160px 300px;
+  border-radius: 30px;
+  width: 1160px;
+  height: 300px;
+}
+
+.content {
+  padding-top: 20px;
+  padding-left: 52px;
+}
+
+.text {
+  width: 823px;
+  height: 120px;
+
+  font-family: 'StratosSkyeng';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+
+  color: #000000;
+}
