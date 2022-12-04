@@ -1,0 +1,15 @@
+.userDataContent {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+}
+
+.userDataLogin {
+  margin-bottom: 20px;
+}
+
+.userDataPassword {
+  margin-bottom: 40px;
+}
