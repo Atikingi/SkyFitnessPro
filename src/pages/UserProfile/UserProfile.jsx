@@ -3,6 +3,7 @@ import UpperBlock from './UpperBlock/UpperBlock';
 import CentralBlock from './CentralBlock/CentralBlock';
 import MyCoursesBlock from './MyCoursesBlock/MyCoursesBlock';
 import styles from './style.module.css';
+
 const UserProfile = () => {
   return (
     <>
