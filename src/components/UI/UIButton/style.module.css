@@ -1,0 +1,22 @@
+.button {
+  width: 278px;
+  height: 52px;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 26px;
+  border: none;
+  color: #fff;
+  background-color: #580ea2;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: #3f007d;
+}
+.button:active {
+  background-color: #1e053b;
+}
+.button:disabled {
+  background-color: #b4b3b3;
+}
+
+/*# sourceMappingURL=style.module.css.map */
