@@ -1,0 +1,7 @@
+.upperBlock {
+  display: flex;
+  padding-top: 33px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 74px;
+}
