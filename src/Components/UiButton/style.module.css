@@ -6,10 +6,11 @@
   border-radius: 26px;
   border: none;
   color: #fff;
-  background-color: #580EA2;
+  background-color: #580ea2;
 }
 .button:hover {
-  background-color: #3F007D;
+  cursor: pointer;
+  background-color: #3f007d;
 }
 .button:active {
   background-color: #1e053b;
