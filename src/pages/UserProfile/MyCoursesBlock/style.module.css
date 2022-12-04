@@ -1,0 +1,4 @@
+.myCoursesBlock {
+  display: flex;
+  flex-direction: column;
+}
