@@ -1,0 +1,23 @@
+
+.button {
+  width: 278px;
+  height: 52px;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 26px;
+  border: none;
+  color: #fff;
+  background-color: #580EA2;
+
+  &:hover {
+    background-color: #3F007D;
+  }
+
+  &:active {
+    background-color: #1e053b;
+  }
+
+  &:disabled {
+    background-color: #b4b3b3;
+  }
+}
