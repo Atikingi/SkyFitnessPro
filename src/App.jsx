@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { UiButton } from './components/UiButton/UiButton';
+import { UiButton } from './components/UI/UiButton/UiButton';
 
 function App() {
   return (
