@@ -1,4 +1,33 @@
 .header {
   padding-top: 30px;
   padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 16px 7px;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  width: 77px;
+  height: 36px;
+  color: #fff;
+
+  background: #140d40;
+  border-radius: 46px;
+  border: none;
+}
+
+.button:hover {
+  background: #2d1f79;
+}
+
+.button:active {
+  background: #3b29a2;
 }

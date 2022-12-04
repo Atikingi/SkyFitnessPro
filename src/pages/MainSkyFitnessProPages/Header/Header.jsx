@@ -4,8 +4,8 @@ import styles from './style.module.css';
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <p>Logo</p>
-      <button>Войти</button>
+      {/* {Logo} */}
+      <button className={styles.button}>Войти</button>
     </header>
   );
 };
