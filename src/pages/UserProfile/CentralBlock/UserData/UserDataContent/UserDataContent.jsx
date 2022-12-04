@@ -3,10 +3,8 @@ import styles from './style.module.css';
 const UserDataContent = () => {
   return (
     <>
-      <div className={[styles.userDataContent, styles.userDataLogin].join(' ')}>Логин: Sergey</div>
-      <div className={[styles.userDataContent, styles.userDataPassword].join(' ')}>
-        Пароль: 43646433
-      </div>
+      <div className={`${styles.userDataContent} ${styles.userDataLogin}`}>Логин: Sergey</div>
+      <div className={`${styles.userDataContent} ${styles.userDataPassword}`}>Пароль: 43646433</div>
     </>
   );
 };
