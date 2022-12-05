@@ -1,15 +1,15 @@
 import React from 'react';
+import style from './style.module.css';
 import Logo from '../../../components/Logo/Logo';
 import LoginAvatarBlock from '../../../components/LoginAvatar/LoginAvatarBlock';
-import styles from './styles.module.css';
 
-const UpperBlock = () => {
+const CourseHeader = () => {
   return (
-    <div className={styles.upperBlock}>
+    <header className={style.header}>
       <Logo />
       <LoginAvatarBlock />
-    </div>
+    </header>
   );
 };
 
-export default UpperBlock;
+export default CourseHeader;
