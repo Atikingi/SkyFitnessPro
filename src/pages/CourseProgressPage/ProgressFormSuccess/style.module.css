@@ -1,6 +1,7 @@
 .container {
   max-width: 444px;
   padding: 41px 88px 223px 88px;
+  background-color: #ffffff;
   background-image: url('/public/img/progress_success.png');
   background-size: 40%;
   background-repeat: no-repeat;
