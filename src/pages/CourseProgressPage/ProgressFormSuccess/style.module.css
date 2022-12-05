@@ -1,0 +1,19 @@
+.container {
+  max-width: 444px;
+  padding: 41px 88px 223px 88px;
+  background-color: #ffffff;
+  background-image: url('/public/img/progress_success.png');
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  border-radius: 12px
+}
+
+.title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  color: #000000;
+}

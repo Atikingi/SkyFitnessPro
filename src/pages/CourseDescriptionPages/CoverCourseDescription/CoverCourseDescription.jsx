@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './style.module.css';
 
-export const СoverCourseDescription = () => {
+export const CoverCourseDescription = () => {
   const name = 'Название курса';
   return (
     <div className={styles.skillCard}>
