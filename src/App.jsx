@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import { MainFitness } from './components/MainSkyFitnessPro/MainSkyFitnessPro';
+import CourseProgressPage from './pages/CourseProgressPage/CourseProgressPage';
 
 function App() {
-  return <MainFitness />;
+  return <CourseProgressPage />;
 }
 
 export default App;
