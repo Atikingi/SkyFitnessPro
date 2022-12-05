@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 const UpperBlock = () => {
   return (
     <div className={styles.upperBlock}>
-      <Logo />
+      <Logo color="#000000" />
       <LoginAvatarBlock />
     </div>
   );
