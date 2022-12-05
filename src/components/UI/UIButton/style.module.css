@@ -1,4 +1,7 @@
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 278px;
   height: 52px;
   font-size: 18px;
@@ -19,4 +22,19 @@
   background-color: #b4b3b3;
 }
 
-/*# sourceMappingURL=style.module.css.map */
+.loadingSpinner {
+  border: 4px solid #330a60;
+  border-top: 4px solid #e0e0e0;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
