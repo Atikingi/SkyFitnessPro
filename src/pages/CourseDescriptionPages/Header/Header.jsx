@@ -1,6 +1,11 @@
 import React from 'react';
 import styles from './style.module.css';
+import Logo from '../../../components/Logo/Logo';
 
 export const Header = () => {
-  return <h1 className={styles.logo}>Logo</h1>;
+  return (
+    <div className={styles.logo}>
+      <Logo />
+    </div>
+  );
 };

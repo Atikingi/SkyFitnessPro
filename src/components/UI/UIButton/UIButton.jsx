@@ -8,4 +8,5 @@ export const UIButton = (props) => {
 			{props.loading ? <div className={styles.loadingSpinner}/> : props.text}
 		</button>
 	);
+
 };
