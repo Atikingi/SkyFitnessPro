@@ -50,27 +50,27 @@
 
 .block:nth-child(1) {
   background-size: 360px 480px;
-  background-image: url("../../../public/img/kurs-backgroundPicture/purple.png");
+  background-image: url('../../../public/img/kurs-backgroundPicture/purple.png');
 }
 .block:nth-child(2) {
   background-size: 360px 480px;
-  background-image: url("../../../public/img/kurs-backgroundPicture/blue.png");
+  background-image: url('../../../public/img/kurs-backgroundPicture/blue.png');
 }
 .block:nth-child(3) {
   background-size: 360px 480px;
-  background-image: url("../../../public/img/kurs-backgroundPicture/orange.png");
+  background-image: url('../../../public/img/kurs-backgroundPicture/orange.png');
 }
 .block:nth-child(4) {
   background-size: 360px 480px;
-  background-image: url("../../../public/img/kurs-backgroundPicture/green.png");
+  background-image: url('../../../public/img/kurs-backgroundPicture/green.png');
 }
 .block:nth-child(5) {
   background-size: 360px 480px;
-  background-image: url("../../../public/img/kurs-backgroundPicture/blue-green.png");
+  background-image: url('../../../public/img/kurs-backgroundPicture/blue-green.png');
 }
 
 .name {
-  font-family: "Abhaya Libre ExtraBold";
+  font-family: 'Abhaya Libre ExtraBold';
   font-style: normal;
   font-weight: 800;
   font-size: 36px;
