@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './style.module.css';
+import { UIButton } from '../../../components/UI/UIButton/UIButton';
 export const SignUpForACourse = () => {
+  const text = 'Записаться на тренировку';
   return (
     <div className={styles.block}>
       <div className={styles.content}>
@@ -8,7 +10,9 @@ export const SignUpForACourse = () => {
           Оставьте заявку на пробное занятие, мы свяжемся с вами, поможем с выбором направления и
           тренера, с которым тренировки принесут здоровье и радость!
         </p>
-        <button>Записаться на тренировку</button>
+      </div>
+      <div className={styles.button}>
+        <UIButton text={text}></UIButton>
       </div>
     </div>
   );

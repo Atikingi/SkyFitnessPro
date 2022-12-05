@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: center;
   padding: 7px 24px 9px;
-
   width: 147px;
   height: 48px;
   color: #000000;
@@ -12,8 +11,35 @@
   border-radius: 46px;
 }
 
+.buttonPositioned {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 7px 24px 9px;
+  width: 147px;
+  height: 48px;
+  color: #000000;
+  background: #c7e957;
+  border-radius: 46px;
+  position: absolute;
+  z-index: 1;
+  bottom: 27px;
+  left: 30px;
+}
+
+.buttonPositioned:hover {
+  background: #daf289;
+  cursor: pointer;
+}
+
+.buttonPositioned:active {
+  background: #ebffab;
+}
+
 .button:hover {
   background: #daf289;
+  cursor: pointer;
 }
 
 .button:active {
