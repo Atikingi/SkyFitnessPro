@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
-import {Link, useNavigate} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {BASE_URL} from "../../store/store";
+
 import styles from "./style.module.css";
 import {UIButton} from "../UI/UIButton/UIButton";
+import Logo from "../Logo/Logo";
 
 
 export function Registration() {
@@ -104,7 +102,7 @@ export function Registration() {
 		<div className={styles.container}>
 			<div className={styles.loginModalBlock}>
 				<div className={styles.inputBlock}>
-					<div className={styles.logo}></div>
+					<Logo/>
 					{/*<input className={styles.input}*/}
 					{/*			 onChange={event => loginHandler(event)}*/}
 					{/*			 value={login}*/}

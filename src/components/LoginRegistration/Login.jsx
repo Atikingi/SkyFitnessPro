@@ -1,11 +1,9 @@
 import {useEffect, useState} from 'react';
-import {Link, useNavigate} from 'react-router-dom';
-import {fetchCreateToken} from '../../store/Thunks/tokenThunk';
-import {BASE_URL} from '../../store/store';
-import axios from 'axios';
+
 import styles from './style.module.css';
 import {Registration} from "./Registration";
 import {UIButton} from "../UI/UIButton/UIButton";
+import Logo from "../Logo/Logo";
 
 export function Login() {
 	const [email, setEmail] = useState('')
@@ -85,7 +83,7 @@ export function Login() {
 		<div className={styles.container}>
 			<div className={styles.loginModalBlock}>
 				<div className={styles.inputBlock}>
-					<div className={styles.logo}></div>
+					<Logo/>
 					{emailVisited && emailError && <div className={styles.loginError}>{emailError}</div>}
 					<input
 						className={styles.input}
