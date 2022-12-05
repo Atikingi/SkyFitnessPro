@@ -11,7 +11,7 @@ export const CourseDescription = () => {
     <div className={styles.main}>
       <Header />
       <CoverCourseDescription />
-      <h1>Подойдет для вас, если:</h1>
+      <h1 className={styles.title}>Подойдет для вас, если:</h1>
       <Wishes />
       <h2>Направления:</h2>
       <CourseDirections />
