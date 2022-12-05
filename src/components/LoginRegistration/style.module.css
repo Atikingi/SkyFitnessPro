@@ -1,83 +1,81 @@
-
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loginModalBlock {
-    position: relative;
-    background: #fff;
-    width: 366px;
-    height: 460px;
-    border-radius: 12px;
+  position: relative;
+  background: #fff;
+  width: 366px;
+  height: 460px;
+  border-radius: 12px;
 }
 
 .inputBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    margin-top: 40px;
-    margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 
 .input {
-    width: 278px;
-    height: 40px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #D0CECE;
-    font-size: 24px;
-    line-height: 24px;
-    color: #313131;
+  width: 278px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #d0cece;
+  font-size: 24px;
+  line-height: 24px;
+  color: #313131;
 }
 
 .input::placeholder {
-    font-size: 18px;
-    line-height: 24px;
-    color: #D0CECE;
+  font-size: 18px;
+  line-height: 24px;
+  color: #d0cece;
 }
 
-
 .buttonBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .passwordError {
-    position: absolute;
-    margin-top: 70px;
-    color: #a21919;
-    font-weight: 600;
+  position: absolute;
+  margin-top: 70px;
+  color: #a21919;
+  font-weight: 600;
 }
 
 .loginError {
-    position: absolute;
-    margin-top: 50px;
-    color: #a21919;
-    font-weight: 600;
+  position: absolute;
+  margin-top: 50px;
+  color: #a21919;
+  font-weight: 600;
 }
 
 .loadingSpinner {
-    position: absolute;
-    left: calc(50% - 40px);
-    top: calc(50% - 40px);
-    border: 8px solid #807bc9;
-    border-top: 8px solid #231bab;
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    animation: spin 2s linear infinite;
+  position: absolute;
+  left: calc(50% - 40px);
+  top: calc(50% - 40px);
+  border: 8px solid #807bc9;
+  border-top: 8px solid #231bab;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
