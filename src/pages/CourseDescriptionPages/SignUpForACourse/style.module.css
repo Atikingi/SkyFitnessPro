@@ -15,11 +15,17 @@
   width: 823px;
   height: 120px;
 
-  font-family: 'StratosSkyeng';
+  font-family: "StratosSkyeng";
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 40px;
 
   color: #000000;
+}
+
+.button {
+  margin-top: 34px;
+  margin-left: 52px;
+  margin-bottom: 48px;
 }

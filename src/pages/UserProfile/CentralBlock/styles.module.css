@@ -1,0 +1,4 @@
+.centralBlock {
+  display: flex;
+  flex-direction: column;
+}
