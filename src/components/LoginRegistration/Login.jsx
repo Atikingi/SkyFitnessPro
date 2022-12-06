@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-
 import styles from './style.module.css';
-import { Registration } from './Registration';
 import { UIButton } from '../UI/UIButton/UIButton';
 import Logo from '../Logo/Logo';
 
