@@ -1,49 +1,49 @@
-body{
-    background-color: #777;
+body {
+  background-color: #777;
 }
-.newPasswordModal{
-    width: 366px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #fff;
-    padding-top: 40px;
-    border-radius: 12px;
+.newPasswordModal {
+  width: 366px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding-top: 40px;
+  border-radius: 12px;
 }
-.newLoginModal{
-    width: 366px;
-    height: 330px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #fff;
-    padding-top: 40px;
-    border-radius: 12px;
+.newLoginModal {
+  width: 366px;
+  height: 330px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding-top: 40px;
+  border-radius: 12px;
 }
 
-.sign{
-    width: 278px;
-    color: #000;
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 600;
-    margin-top: 40px;
-    margin-bottom: 20px;
+.sign {
+  width: 278px;
+  color: #000;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
-.inputBlock{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 50px;
+.inputBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 50px;
 }
-.input{
-    width: 278px;
-    height: 32px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #D0CECE;
-    font-size: 24px;
-    line-height: 24px;
-    color: #313131;
+.input {
+  width: 278px;
+  height: 32px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #d0cece;
+  font-size: 24px;
+  line-height: 24px;
+  color: #313131;
 }
