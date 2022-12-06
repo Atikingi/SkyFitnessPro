@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './style.module.css';
-
+import Logo from '../../../components/Logo/Logo';
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <img src="/img/logo/logo-dark-theme.svg" alt="SkyPro" />
+      <Logo color="#ffffff" />
       <button className={styles.button}>Войти</button>
     </header>
   );

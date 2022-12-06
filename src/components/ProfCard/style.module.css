@@ -47,6 +47,9 @@
   border-radius: 30px;
   box-shadow: 10px -10px 16px rgba(0, 0, 0, 0.1), -10px 10px 15.9988px rgba(0, 0, 0, 0.1);
 }
+.block:hover {
+  cursor: pointer;
+}
 
 .block:nth-child(1) {
   background-size: 360px 480px;

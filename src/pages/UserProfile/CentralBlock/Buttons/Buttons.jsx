@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './style.module.css';
+import { UIButton } from '../../../../components/UI/UIButton/UIButton';
 const Buttons = () => {
   return (
     <div className={styles.buttons}>
-      {/* тут кнопки - EditingLogin
-			EditingPassword */}
+      <UIButton text="Редактировать логин" />
+      <UIButton text="Редактировать пароль" />
     </div>
   );
 };

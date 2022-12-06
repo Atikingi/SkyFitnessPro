@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './style.module.css';
-import PlayButtonIcon from '../../../components/Icons/PlayButtonIcon';
+import PlayButtonIcon from '../../../components/icons/PlayButtonIcon';
 
 const CourseVideo = () => {
   return (

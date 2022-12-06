@@ -3,7 +3,12 @@ import './App.css';
 import { MainFitness } from './components/MainSkyFitnessPro/MainSkyFitnessPro';
 
 function App() {
-  return <MainFitness />;
+  return (
+    <>
+      {/* <UserProfile /> */}
+      <MainFitnessPage />;
+    </>
+  );
 }
 
 export default App;
