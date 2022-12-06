@@ -5,32 +5,42 @@
   background: #271a58;
 }
 
+.block:active {
+  opacity: 0.5;
+}
+
 /* hover! */
 .block:nth-child(1):hover {
-  box-shadow: 10px -10px 16px purple, -10px 10px 15.9988px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 10px rgb(159, 0, 199);
   transition: 0.5s;
+  background-size: 460px 580px;
 }
 .block:nth-child(2):hover {
-  box-shadow: 10px -10px 16px blue, -10px 10px 15.9988px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 10px blue;
   transition: 0.5s;
+  background-size: 460px 580px;
 }
 
 .block:nth-child(3):hover {
-  box-shadow: 10px -10px 16px orange, -10px 10px 15.9988px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 10px orange;
   transition: 0.5s;
+  background-size: 460px 580px;
 }
 .block:nth-child(4):hover {
-  box-shadow: 10px -10px 16px greenyellow, -10px 10px 15.9988px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 10px greenyellow;
   transition: 0.5s;
+  background-size: 460px 580px;
 }
 .block:nth-child(5):hover {
-  box-shadow: 10px -10px 16px turquoise, -10px 10px 15.9988px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 10px turquoise;
   transition: 0.5s;
+  background-size: 460px 580px;
 }
 
 /* class */
 
 .block {
+  cursor: pointer;
   display: block;
   width: 360px;
   height: 480px;

@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+  margin-bottom: 75px;
+}
+
+.playButton {
+  position: absolute;
+  top: 241px;
+  left: 502px;
+  cursor: pointer;
+  color: #fafafa;
+}
+
+.playButton:hover {
+  color: #bebebe;
+}
+
+.imageWrapper {
+  width: 1160px;
+  height: 639px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #b7b6b6;
+}
