@@ -1,0 +1,48 @@
+.container {
+    position: relative;
+    width: 278px;
+    min-height: 76px;
+    padding: 12px 27px 18px 27px;
+    border: 1px solid #000000;
+    border-radius: 26px;
+    cursor: pointer;
+}
+
+.activeContainer {
+    composes: container;
+    border: 1px solid #06B16E;
+}
+
+.title {
+    margin-bottom: 6px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    text-align: center;
+    letter-spacing: -0.05px;
+    color: #000000;
+}
+
+.activeTitle {
+    composes: title;
+    color: #06B16E;
+}
+
+.subtitle {
+    composes: title;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.001em;
+}
+
+.activeSubtitle {
+    composes: subtitle;
+    color: #06B16E;
+}
+
+.icon {
+    position: absolute;
+    top: 13px;
+    right: 12px;
+}
