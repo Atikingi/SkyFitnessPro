@@ -1,7 +1,5 @@
 .wrapper {
-  /* Удалить паддинги после создания layout*/
-  padding-left: calc(50% - 585px);
-  padding-right: calc(50% - 585px);
+  
   display: flex;
   flex-direction: column;
   align-items: center;
