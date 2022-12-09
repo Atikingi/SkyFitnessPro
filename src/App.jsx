@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import { MainFitness } from './components/MainSkyFitnessPro/MainSkyFitnessPro';
+import AppRoutes from './routes/routes';
 
 function App() {
   return (
     <>
-      {/* <UserProfile /> */}
-      <MainFitnessPage />;
+      <AppRoutes />
     </>
   );
 }
