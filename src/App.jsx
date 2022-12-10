@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { MainFitness } from './components/MainSkyFitnessPro/MainSkyFitnessPro';
+import { MainFitnessPage } from './pages/MainSkyFitnessProPage/MainFitnessProPage';
 
 function App() {
   return (
