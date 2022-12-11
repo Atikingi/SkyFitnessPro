@@ -9,5 +9,7 @@ const rootReducer = combineReducers({
 
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware.concat(fitnessApi.middleware)
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(fitnessApi.middleware)
 });
+
+export default store;
