@@ -49,6 +49,7 @@
     height: 480px;
     border-radius: 30px;
     box-shadow: 10px -10px 16px rgba(0, 0, 0, 0.1), -10px 10px 16px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .block:hover {
