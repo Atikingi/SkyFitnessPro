@@ -3,6 +3,7 @@ import style from './style.module.css';
 import Logo from '../../Logo/Logo';
 import { UIButton } from '../../UI/UIButton/UIButton';
 import { useState } from 'react';
+import { passwordHandler } from '../../../lib/LoginRegistration/passwordHandler';
 
 export const NewPassword = () => {
   return (
@@ -21,7 +22,7 @@ export const NewPassword = () => {
         />
         <input
           className={style.input}
-          // onChange={event => passwordHandler(event)}
+          // onChange={event => passwordHandler(event, setPassword, setPasswordRepeat, setError)}
           // onKeyDown={event => {
           //  if (event.key === 'Enter') comparePasswords(event)
           // }}

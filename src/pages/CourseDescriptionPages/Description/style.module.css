@@ -1,13 +1,11 @@
 .text {
-  width: 1160px;
-  height: 96px;
-  font-family: 'StratosSkyeng';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
-  color: #000000;
-
-  margin-top: 75px;
-  margin-bottom: 75px;
+    width: 1160px;
+    height: 96px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    margin-top: 75px;
+    margin-bottom: 75px;
 }
