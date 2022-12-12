@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { fitnessApi } from '../services/fitnessApi';
-import { getCourses } from './slices/coursesSlice';
+import { coursesSlice } from './slices/coursesSlice';
+import { authSlice } from './slices/authSlice';
 
 const rootReducer = combineReducers({
   [fitnessApi.reducerPath]: fitnessApi.reducer,
-  courses: getCourses
+  courses: coursesSlice.reducer,
+  auth: authSlice.reducer
 });
 
 export const store = configureStore({

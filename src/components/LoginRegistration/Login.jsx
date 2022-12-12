@@ -1,10 +1,19 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import styles from './style.module.css';
 import { UIButton } from '../UI/UIButton/UIButton';
 import Logo from '../Logo/Logo';
+import UIModal from '../UI/UIModal/UiModal';
+import { Registration } from './Registration';
+import CloseModalIcon from '../Icons/CloseModalIcon';
+import { useDispatch } from 'react-redux';
+import { login } from '../../store/slices/authSlice';
 
-export function Login() {
-  const [email, setEmail] = useState('');
+export function Login({ closeModal }) {
+  const auth = getAuth();
+  const dispatch = useDispatch();
+
+  const [userEmail, setUserEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('Логин не может быть пустым');
   const [passwordError, setPasswordError] = useState('Пароль не может быть пустым');
@@ -13,23 +22,21 @@ export function Login() {
   const [formValid, setFormValid] = useState(false);
   const [enterError, setEnterError] = useState('');
   const [loginLoading, setLoginLoading] = useState(false);
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
-  // const dispatch = useDispatch()
-
-  // const loginError = useSelector(loginErrorSelector)
   const loginError = false;
 
-  // const navigate = useNavigate()
-
   const loginHandler = (event) => {
-    const email = event.target.value;
-    setEmail(email);
-    setEmailError(email ? '' : 'E-mail не может быть пустым');
+    const userEmail = event.target.value;
+    setUserEmail(userEmail);
+    setEmailError(userEmail ? '' : 'E-mail не может быть пустым');
   };
+
   const passwordHandler = (event) => {
     setPassword(event.target.value);
     event.target.value ? setPasswordError('') : setPasswordError('Пароль не может быть пустым');
   };
+
   const blurHandler = (event) => {
     switch (event.target.name) {
       case 'email':
@@ -47,77 +54,88 @@ export function Login() {
   async function enterHandler(event) {
     event.preventDefault();
 
-    const user = {
-      username: 'Megapixar',
-      first_name: '',
-      last_name: '',
-      email,
-      password
-    };
     setLoginLoading(true);
+
     try {
-      // const response = await axios.get(`./stub.json`)
-      sessionStorage.setItem('userName', user.username);
-      // await dispatch(fetchCreateToken(user, ''))
-      sessionStorage.setItem('userEmail', email);
+      const response = await signInWithEmailAndPassword(auth, userEmail, password);
+      const { accessToken, email, refreshToken, displayName } = await response.user;
+
+      dispatch(
+        login({
+          email,
+          token: accessToken,
+          name: displayName,
+          password: password
+        })
+      );
+
+      localStorage.setItem('refreshToken', refreshToken);
+      console.log(response);
+      closeModal();
+
       setPasswordError('');
       setLoginLoading(false);
-      // navigate('/main')
     } catch (error) {
       setLoginLoading(false);
-      setEnterError('Не получилось, описание в консоли');
-      console.log(error.request.responseText);
+      setEnterError(error.message);
     }
   }
 
-  const registerHandler = (event) => {
+  const registrationHandler = (event) => {
     event.preventDefault();
-    // navigate('/registration')
+
+    setShowRegistrationForm(true);
   };
 
-  if (loginError) return <p>${loginError.message}</p>;
+  const closeRegistrationForm = () => {
+    setShowRegistrationForm(false);
+  };
+
+  if (loginError) return <p>{loginError.message}</p>;
 
   return (
     <div className={styles.container}>
       <div className={styles.loginModalBlock}>
         <div className={styles.inputBlock}>
-          <Logo />
+          <Logo color={'#000000'} />
+          <div className={styles.closeButton} onClick={closeModal}>
+            <CloseModalIcon />
+          </div>
           {emailVisited && emailError && <div className={styles.loginError}>{emailError}</div>}
           <input
             className={styles.input}
-            onChange={(event) => loginHandler(event)}
-            onBlur={(event) => blurHandler(event)}
+            onChange={loginHandler}
+            onBlur={blurHandler}
             name="email"
-            placeholder="Электропочта"
+            placeholder="Email"
           />
-
           {passwordVisited && passwordError && (
             <div className={styles.passwordError}>{passwordError}</div>
           )}
           <input
             className={styles.input}
-            onChange={(event) => passwordHandler(event)}
-            onBlur={(event) => blurHandler(event)}
+            onChange={passwordHandler}
+            onBlur={blurHandler}
             onKeyDown={(event) => {
               if (event.key === 'Enter') enterHandler(event);
             }}
+            type="password"
             name="password"
             placeholder="Пароль"
           />
         </div>
-
         {enterError && <div className={styles.passwordError}>{enterError}</div>}
         <div className={styles.buttonBlock}>
-          {/*<Link to="/main">*/}
-          <UIButton disabled={!formValid} onClick={(event) => enterHandler(event)} text="Войти" />
-          {/*</Link>*/}
-          {/*<Link to="/registration">*/}
-          <UIButton onClick={(event) => registerHandler(event)} text="Зарегистрироваться" />
-          {/*</Link>*/}
+          <UIButton disabled={!formValid} onClick={enterHandler} text="Войти" />
+          <UIButton onClick={registrationHandler} text="Зарегистрироваться" />
         </div>
-
         {loginLoading && <div className={styles.loadingSpinner}></div>}
       </div>
+      {showRegistrationForm && (
+        <UIModal>
+          <Registration closeModal={closeRegistrationForm} />
+        </UIModal>
+      )}
     </div>
   );
 }

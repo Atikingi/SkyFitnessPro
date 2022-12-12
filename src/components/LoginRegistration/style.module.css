@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,10 +7,17 @@
 
 .loginModalBlock {
   position: relative;
+  padding-bottom: 47px;
   background: #fff;
   width: 366px;
-  height: 460px;
   border-radius: 12px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }
 
 .inputBlock {
@@ -47,7 +55,8 @@
 
 .passwordError {
   position: absolute;
-  margin-top: 70px;
+  top: 80px;
+  left: 40px;
   color: #a21919;
   font-weight: 600;
 }

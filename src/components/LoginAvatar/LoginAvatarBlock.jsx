@@ -1,15 +1,15 @@
 import React from 'react';
 import Avatar from './Avatar/Avatar';
 import Name from './Name/Name';
-import Select from './Select/Select';
 import styles from './style.module.css';
+import LogoutButton from './LogoutButton/LogoutButton';
 
-const LoginAvatarBlock = () => {
+const LoginAvatarBlock = ({ lightColor }) => {
   return (
     <div className={styles.loginAvatarBlock}>
       <Avatar />
-      <Name />
-      <Select />
+      <Name lightColor={lightColor} />
+      <LogoutButton lightColor={lightColor} />
     </div>
   );
 };
