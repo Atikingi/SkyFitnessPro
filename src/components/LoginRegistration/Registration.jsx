@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './style.module.css';
 import { UIButton } from '../UI/UIButton/UIButton';
 import Logo from '../Logo/Logo';
+import { passwordHandler } from '../../lib/LoginRegistration/passwordHandler';
 
 export function Registration() {
   const [login, setLogin] = useState('');
@@ -34,25 +35,6 @@ export function Registration() {
       : setEmailError('Некорректный e-mail');
   };
 
-  const passwordHandler = (event) => {
-    switch (event.target.name) {
-      case 'password':
-        setPassword(event.target.value);
-        break;
-      case 'passwordRepeat':
-        setPasswordRepeat(event.target.value);
-        break;
-    }
-    if (event.target.value.length < 8 || event.target.value.length > 16) {
-      setError('Пароль должен быть от 8 до 16 символов');
-      if (!event.target.value) {
-        setError('Пароль не может быть пустым');
-      }
-    } else {
-      setError('');
-    }
-  };
-
   const blurHandler = (event) => {
     switch (event.target.name) {
       case 'email':
@@ -68,14 +50,14 @@ export function Registration() {
     emailError || passwordError ? setFormValid(false) : setFormValid(true);
   }, [emailError, passwordError]);
 
-  function comparePasswords(event) {
+  const comparePasswords = (event) => {
     event.preventDefault();
     if (!passwordRepeat) {
       setError('Повторите пароль');
       return;
     }
     password === passwordRepeat ? createUser() : setError('Пароли не совпадают');
-  }
+  };
 
   async function createUser() {
     const user = {
@@ -137,7 +119,7 @@ export function Registration() {
 
           <input
             className={styles.input}
-            onChange={(event) => passwordHandler(event)}
+            onChange={(event) => passwordHandler(event, setPassword, setPasswordRepeat, setError)}
             onKeyDown={(event) => {
               if (event.key === 'Enter') comparePasswords(event);
             }}
@@ -146,8 +128,8 @@ export function Registration() {
             type="text"
           />
         </div>
-        {/*<Link to={'/main'}>*/}
         <div className={styles.buttonBlock}>
+          {/*<Link to={'/main'}>*/}
           <UIButton
             disabled={!formValid}
             onClick={(event) => comparePasswords(event)}
