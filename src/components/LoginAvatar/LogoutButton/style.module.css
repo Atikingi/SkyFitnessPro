@@ -1,12 +1,12 @@
 .button {
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    outline: none;
-    color: #ffffff;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  color: #ffffff;
 }
 
 .buttonDark {
-    composes: button;
-    color: #000000;
+  composes: button;
+  color: #000000;
 }
