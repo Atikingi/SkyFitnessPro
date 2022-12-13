@@ -4,6 +4,7 @@ import { Header } from './Header/Header';
 import { Title } from './Title/Title';
 import { ProfCard } from '../../components/ProfCard/ProfCard';
 import { Footer } from './Footer/Footer';
+import { Link } from 'react-router-dom';
 
 export const MainFitnessPage = () => {
   return (
@@ -11,13 +12,10 @@ export const MainFitnessPage = () => {
       <Header />
       <Title />
       <div className={styles.cardsBlock}>
-        <ProfCard courseName="Йога" />
-        <ProfCard courseName="Стретчинг" />
-        <ProfCard courseName="Танцевальный фитнес" />
-        <ProfCard courseName="Степ-аэробика" />
-        <ProfCard courseName="Бодифлекс" />
+        <Link to="yoga">
+          <ProfCard courseName="Йога" />
+        </Link>
       </div>
-
       <Footer />
     </div>
   );
