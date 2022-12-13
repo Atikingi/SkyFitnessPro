@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import styles from './style.module.css';
 import { UIButton } from '../UI/UIButton/UIButton';
 import Logo from '../Logo/Logo';
+import CloseModalIcon from '../Icons/CloseModalIcon';
 import { passwordHandler } from '../../lib/LoginRegistration/passwordHandler';
 
-export function Registration() {
+export function Registration({ closeModal }) {
+  const auth = getAuth();
+
   const [login, setLogin] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,9 +19,6 @@ export function Registration() {
   const [passwordError, setError] = useState('Пароль не может быть пустым');
   const [formValid, setFormValid] = useState(false);
   const [loginLoading, setLoginLoading] = useState(false);
-
-  // const dispatch = useDispatch()
-  // const navigate = useNavigate()
 
   const loginHandler = (event) => {
     const login = event.target.value;
@@ -60,24 +60,19 @@ export function Registration() {
   };
 
   async function createUser() {
-    const user = {
-      username: login,
-      first_name: '',
-      last_name: '',
-      email,
-      password
-    };
     setLoginLoading(true);
     try {
-      // await axios.post(`${BASE_URL}/user/signup/`, user )
-      // await axios.post(`${BASE_URL}/user/login/`, user)
-      // await dispatch(fetchCreateToken(user, ''))
+      await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(auth.currentUser, {
+        displayName: login
+      });
+
       setLoginLoading(false);
-      // navigate('/main')
+      closeModal();
     } catch (error) {
       setLoginLoading(false);
       setError('Не получилось, описание в консоли');
-      console.log(error.request.responseText);
+      console.log(error);
     }
   }
 
@@ -85,22 +80,26 @@ export function Registration() {
     <div className={styles.container}>
       <div className={styles.loginModalBlock}>
         <div className={styles.inputBlock}>
-          <Logo />
-          {/*<input className={styles.input}*/}
-          {/*			 onChange={event => loginHandler(event)}*/}
-          {/*			 value={login}*/}
-          {/*			 name='name'*/}
-          {/*			 placeholder='Имя'*/}
-          {/*			 type='text'/>*/}
-
+          <Logo color={'#000000'} />
+          <div className={styles.closeButton} onClick={closeModal}>
+            <CloseModalIcon />
+          </div>
+          <input
+            className={styles.input}
+            onChange={loginHandler}
+            value={login}
+            name="name"
+            placeholder="Имя"
+            type="text"
+          />
           {emailVisited && emailError && <div className={styles.loginError}>{emailError}</div>}
           <input
             className={styles.input}
-            onChange={(event) => emailHandler(event)}
+            onChange={emailHandler}
             value={email}
-            onBlur={(event) => blurHandler(event)}
+            onBlur={blurHandler}
             name="email"
-            placeholder="Электропочта"
+            placeholder="Email"
             type="text"
           />
 
@@ -109,12 +108,12 @@ export function Registration() {
           )}
           <input
             className={styles.input}
-            onChange={(event) => passwordHandler(event)}
+            onChange={(event) => passwordHandler(event, setPassword, setPasswordRepeat, setError)}
             value={password}
-            onBlur={(event) => blurHandler(event)}
+            onBlur={blurHandler}
             name="password"
             placeholder="Пароль"
-            type="text"
+            type="password"
           />
 
           <input
@@ -125,17 +124,11 @@ export function Registration() {
             }}
             name="passwordRepeat"
             placeholder="Повторите пароль"
-            type="text"
+            type="password"
           />
         </div>
         <div className={styles.buttonBlock}>
-          {/*<Link to={'/main'}>*/}
-          <UIButton
-            disabled={!formValid}
-            onClick={(event) => comparePasswords(event)}
-            text="Зарегистрироваться"
-          />
-          {/*</Link>*/}
+          <UIButton disabled={!formValid} onClick={comparePasswords} text="Зарегистрироваться" />
         </div>
         {loginLoading && <div className={styles.loadingSpinner}></div>}
       </div>

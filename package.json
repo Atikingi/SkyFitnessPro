@@ -7,10 +7,11 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "firebase": "^9.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -18,6 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "preinstall": "npx npm-force-resolutions",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
@@ -27,6 +29,9 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.9"
   },
   "browserslist": {
     "production": [
@@ -41,12 +46,12 @@
     ]
   },
   "devDependencies": {
-    "axios": "^1.2.1",
     "eslint": "8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
     "prettier": "^2.8.0",
+    "react-error-overlay": "^6.0.9",
     "react-router-dom": "^6.4.4"
   }
 }

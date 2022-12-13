@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import { MainFitnessPage } from '../pages/MainSkyFitnessProPage/MainFitnessProPage';
+
 const AppRoutes = () => {
   return (
     <Routes>

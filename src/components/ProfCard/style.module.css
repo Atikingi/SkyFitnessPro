@@ -1,91 +1,91 @@
 .main {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    background: #271a58;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background: #271a58;
 }
 
 .block:active {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 /* hover! */
 .block:nth-child(1):hover {
-    box-shadow: 0 0 10px 10px rgb(159, 0, 199);
-    transition: 0.5s;
-    background-size: 460px 580px;
+  box-shadow: 0 0 10px 10px rgb(159, 0, 199);
+  transition: 0.5s;
+  background-size: 460px 580px;
 }
 
 .block:nth-child(2):hover {
-    box-shadow: 0 0 10px 10px blue;
-    transition: 0.5s;
-    background-size: 460px 580px;
+  box-shadow: 0 0 10px 10px blue;
+  transition: 0.5s;
+  background-size: 460px 580px;
 }
 
 .block:nth-child(3):hover {
-    box-shadow: 0 0 10px 10px orange;
-    transition: 0.5s;
-    background-size: 460px 580px;
+  box-shadow: 0 0 10px 10px orange;
+  transition: 0.5s;
+  background-size: 460px 580px;
 }
 
 .block:nth-child(4):hover {
-    box-shadow: 0 0 10px 10px greenyellow;
-    transition: 0.5s;
-    background-size: 460px 580px;
+  box-shadow: 0 0 10px 10px greenyellow;
+  transition: 0.5s;
+  background-size: 460px 580px;
 }
 
 .block:nth-child(5):hover {
-    box-shadow: 0 0 10px 10px turquoise;
-    transition: 0.5s;
-    background-size: 460px 580px;
+  box-shadow: 0 0 10px 10px turquoise;
+  transition: 0.5s;
+  background-size: 460px 580px;
 }
 
 /* class */
 
 .block {
-    cursor: pointer;
-    display: block;
-    width: 360px;
-    height: 480px;
-    border-radius: 30px;
-    box-shadow: 10px -10px 16px rgba(0, 0, 0, 0.1), -10px 10px 16px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+  cursor: pointer;
+  display: block;
+  width: 360px;
+  height: 480px;
+  border-radius: 30px;
+  box-shadow: 10px -10px 16px rgba(0, 0, 0, 0.1), -10px 10px 16px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 .block:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .block:nth-child(1) {
-    background-size: 360px 480px;
-    background-image: url('../../../public/img/kurs-backgroundPicture/purple.png');
+  background-size: 360px 480px;
+  background-image: url('../../../public/img/kurs-backgroundPicture/purple.png');
 }
 
 .block:nth-child(2) {
-    background-size: 360px 480px;
-    background-image: url('../../../public/img/kurs-backgroundPicture/blue.png');
+  background-size: 360px 480px;
+  background-image: url('../../../public/img/kurs-backgroundPicture/blue.png');
 }
 
 .block:nth-child(3) {
-    background-size: 360px 480px;
-    background-image: url('../../../public/img/kurs-backgroundPicture/orange.png');
+  background-size: 360px 480px;
+  background-image: url('../../../public/img/kurs-backgroundPicture/orange.png');
 }
 
 .block:nth-child(4) {
-    background-size: 360px 480px;
-    background-image: url('../../../public/img/kurs-backgroundPicture/green.png');
+  background-size: 360px 480px;
+  background-image: url('../../../public/img/kurs-backgroundPicture/green.png');
 }
 
 .block:nth-child(5) {
-    background-size: 360px 480px;
-    background-image: url('../../../public/img/kurs-backgroundPicture/blue-green.png');
+  background-size: 360px 480px;
+  background-image: url('../../../public/img/kurs-backgroundPicture/blue-green.png');
 }
 
 .name {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 110%;
-    padding-top: 30px;
-    padding-left: 30px;
-    color: #000000;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 110%;
+  padding-top: 30px;
+  padding-left: 30px;
+  color: #000000;
 }
