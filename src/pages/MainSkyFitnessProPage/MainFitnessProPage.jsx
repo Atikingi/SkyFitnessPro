@@ -1,18 +1,18 @@
 import React from 'react';
-import styles from './style.module.css';
-import { Header } from './Header/Header';
+import Header from '../../components/Header/Header';
 import { Title } from './Title/Title';
 import { ProfCard } from '../../components/ProfCard/ProfCard';
 import { Footer } from './Footer/Footer';
 import { Link } from 'react-router-dom';
+import styles from './style.module.css';
 
 export const MainFitnessPage = () => {
   return (
     <div className={styles.main}>
-      <Header />
+      <Header logoColor="#ffffff" lightColor={true} />
       <Title />
       <div className={styles.cardsBlock}>
-        <Link to="yoga">
+        <Link to="yoga" className={styles.link}>
           <ProfCard courseName="Йога" />
         </Link>
       </div>

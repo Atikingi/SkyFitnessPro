@@ -1,27 +1,23 @@
 .button {
+  width: 147px;
+  height: 48px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 7px 24px 9px;
-  width: 147px;
-  height: 48px;
+  font-family: 'Bahnschrift', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 115%;
   color: #000000;
   background: #c7e957;
   border-radius: 46px;
+  border: 0;
 }
 
 .buttonPositioned {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 7px 24px 9px;
-  width: 147px;
-  height: 48px;
-  color: #000000;
-  background: #c7e957;
-  border-radius: 46px;
+  composes: button;
   position: absolute;
   z-index: 1;
   bottom: 27px;

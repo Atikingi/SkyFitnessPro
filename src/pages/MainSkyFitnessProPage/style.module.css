@@ -1,4 +1,8 @@
 .main {
+  min-height: 100vh;
+  width: 100%;
+  padding-left: calc(50% - 580px);
+  padding-right: calc(50% - 580px);
   background: #271a58;
 }
 
@@ -6,4 +10,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
+}
+
+.link {
+  text-decoration: none;
 }

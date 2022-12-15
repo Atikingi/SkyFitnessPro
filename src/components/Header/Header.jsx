@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import Logo from '../Logo/Logo';
+import LoginAvatarBlock from '../LoginAvatar/LoginAvatarBlock';
 import styles from './style.module.css';
-import Logo from '../../../components/Logo/Logo';
-import UIModal from '../../../components/UI/UIModal/UiModal';
-import { Login } from '../../../components/LoginRegistration/Login';
-import LoginAvatarBlock from '../../../components/LoginAvatar/LoginAvatarBlock';
 import { useSelector } from 'react-redux';
-import { getAuthStatus } from '../../../store/selectors/authSelector';
+import { getAuthStatus } from '../../store/selectors/authSelector';
+import UIModal from '../UI/UIModal/UiModal';
+import { Login } from '../LoginRegistration/Login';
 
-export const Header = () => {
+const Header = ({ logoColor, lightColor }) => {
   const [showLoginForm, setShowLoginForm] = useState(false);
 
   const isAuth = useSelector(getAuthStatus);
@@ -18,9 +18,9 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Logo color="#ffffff" />
+      <Logo color={logoColor} />
       {isAuth ? (
-        <LoginAvatarBlock lightColor={true} />
+        <LoginAvatarBlock lightColor={lightColor} />
       ) : (
         <button className={styles.button} onClick={showLoginFormHandle}>
           Войти
@@ -34,3 +34,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;
