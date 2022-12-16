@@ -7,3 +7,7 @@
 .cardBlock {
   position: relative;
 }
+
+.link {
+  text-decoration: none;
+}

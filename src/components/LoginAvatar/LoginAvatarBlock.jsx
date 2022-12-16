@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const LoginAvatarBlock = ({ lightColor }) => {
   return (
     <div className={styles.loginAvatarBlock}>
-      <Link to="profile">
+      <Link to="/profile" className={styles.link}>
         <Avatar />
         <Name lightColor={lightColor} />
       </Link>

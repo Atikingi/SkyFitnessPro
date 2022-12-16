@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Logo = ({ color }) => {
   return (
-    <>
+    <Link to="/">
       <svg
         width="223"
         height="36"
@@ -108,7 +109,7 @@ const Logo = ({ color }) => {
           </filter>
         </defs>
       </svg>
-    </>
+    </Link>
   );
 };
 
