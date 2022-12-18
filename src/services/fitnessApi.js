@@ -1,18 +1,24 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query';
+import { createApi, fakeBaseQuery } from '@reduxjs/toolkit/query/react';
+import db from '../firebase';
+import { get, child, ref } from 'firebase/database';
 
 export const fitnessApi = createApi({
   reducerPath: 'fitnessApi',
-  baseQuery: fetchBaseQuery({
-    baseUrl: 'корневой url'
-  }),
+  baseQuery: fakeBaseQuery(),
   endpoints: (builder) => ({
-    getCourses: builder.query({
-      query: () => ({
-        url: '/дополнение после базового url'
-      })
+    fetchCourses: builder.query({
+      async queryFn() {
+        try {
+          const coursesFetch = await get(child(ref(db), 'course'));
+          const coursesList = Object.values(coursesFetch.val());
+
+          return { data: coursesList };
+        } catch (e) {
+          console.log(e);
+        }
+      }
     })
   })
 });
 
-// раскомментировать при работе с хуком
-// export const {useGetCoursesQuery} = fitnessApi;
+export const { useFetchCoursesQuery } = fitnessApi;
