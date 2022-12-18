@@ -5,43 +5,6 @@
   background: #271a58;
 }
 
-.block:active {
-  opacity: 0.5;
-}
-
-/* hover! */
-.block:nth-child(1):hover {
-  box-shadow: 0 0 10px 10px rgb(159, 0, 199);
-  transition: 0.5s;
-  background-size: 460px 580px;
-}
-
-.block:nth-child(2):hover {
-  box-shadow: 0 0 10px 10px blue;
-  transition: 0.5s;
-  background-size: 460px 580px;
-}
-
-.block:nth-child(3):hover {
-  box-shadow: 0 0 10px 10px orange;
-  transition: 0.5s;
-  background-size: 460px 580px;
-}
-
-.block:nth-child(4):hover {
-  box-shadow: 0 0 10px 10px greenyellow;
-  transition: 0.5s;
-  background-size: 460px 580px;
-}
-
-.block:nth-child(5):hover {
-  box-shadow: 0 0 10px 10px turquoise;
-  transition: 0.5s;
-  background-size: 460px 580px;
-}
-
-/* class */
-
 .block {
   cursor: pointer;
   display: block;
@@ -50,35 +13,60 @@
   border-radius: 30px;
   box-shadow: 10px -10px 16px rgba(0, 0, 0, 0.1), -10px 10px 16px rgba(0, 0, 0, 0.1);
   background-color: #fff;
+  text-decoration: none;
 }
 
-.block:hover {
-  cursor: pointer;
+.block:active {
+  opacity: 0.5;
 }
 
-.block:nth-child(1) {
+.blockPurple {
+  composes: block;
   background-size: 360px 480px;
   background-image: url('../../../public/img/kurs-backgroundPicture/purple.png');
 }
 
-.block:nth-child(2) {
-  background-size: 360px 480px;
+.blockPurple:hover {
+  background-size: 460px 580px;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 0 0 10px 10px rgb(159, 0, 199);
+}
+
+.blockBlue {
+  composes: blockPurple;
   background-image: url('../../../public/img/kurs-backgroundPicture/blue.png');
 }
 
-.block:nth-child(3) {
-  background-size: 360px 480px;
+.blockBlue:hover {
+  box-shadow: 0 0 10px 10px blue;
+}
+
+.blockOrange {
+  composes: blockPurple;
   background-image: url('../../../public/img/kurs-backgroundPicture/orange.png');
 }
 
-.block:nth-child(4) {
-  background-size: 360px 480px;
+.blockOrange:hover {
+  box-shadow: 0 0 10px 10px orange;
+}
+
+.blockGreen {
+  composes: blockPurple;
   background-image: url('../../../public/img/kurs-backgroundPicture/green.png');
 }
 
-.block:nth-child(5) {
-  background-size: 360px 480px;
+.blockGreen:hover {
+  box-shadow: 0 0 10px 10px greenyellow;
+}
+
+.blockAqua{
+  composes: blockPurple;
   background-image: url('../../../public/img/kurs-backgroundPicture/blue-green.png');
+}
+
+.blockAqua:hover {
+  box-shadow: 0 0 10px 10px turquoise;
 }
 
 .name {

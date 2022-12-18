@@ -8,10 +8,8 @@
 
 .cardsBlock {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 40px;
-}
-
-.link {
-  text-decoration: none;
 }

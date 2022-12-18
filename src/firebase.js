@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
   /* eslint-disable no-undef */
@@ -12,3 +13,7 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
+
+const db = getDatabase();
+
+export default db;
