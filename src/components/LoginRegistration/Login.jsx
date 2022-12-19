@@ -58,7 +58,7 @@ export function Login({ closeModal }) {
 
     try {
       const response = await signInWithEmailAndPassword(auth, userEmail, password);
-      const { accessToken, email, refreshToken, displayName } = await response.user;
+      const { accessToken, email, refreshToken, displayName, uid } = await response.user;
 
       dispatch(
         login({
@@ -70,6 +70,7 @@ export function Login({ closeModal }) {
       );
 
       localStorage.setItem('refreshToken', refreshToken);
+      localStorage.setItem('id', uid);
       console.log(response);
       closeModal();
 
