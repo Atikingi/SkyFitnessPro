@@ -1,17 +1,12 @@
 import React from 'react';
 import styles from './style.module.css';
 
-export const CourseDirections = () => {
-  const list = 'Йога для новичков';
+export const CourseDirections = ({ directions }) => {
   return (
     <ul className={styles.list}>
-      <li>{list}</li>
-      <li>{list}</li>
-      <li>{list}</li>
-
-      <li>{list}</li>
-      <li>{list}</li>
-      <li>{list}</li>
+      {directions.map((el, index) => (
+        <li key={index}>{el}</li>
+      ))}
     </ul>
   );
 };

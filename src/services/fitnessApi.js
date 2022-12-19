@@ -17,8 +17,18 @@ export const fitnessApi = createApi({
           console.log(e);
         }
       }
+    }),
+    fetchCoursePage: builder.query({
+      async queryFn(id) {
+        try {
+          const courseFetch = await get(child(ref(db), `course/${id}`));
+          return { data: courseFetch.val() };
+        } catch (e) {
+          console.log(e);
+        }
+      }
     })
   })
 });
 
-export const { useFetchCoursesQuery } = fitnessApi;
+export const { useFetchCoursesQuery, useFetchCoursePageQuery } = fitnessApi;
