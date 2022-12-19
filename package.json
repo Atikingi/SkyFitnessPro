@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "preinstall": "npx npm-force-resolutions",
-    "lint": "eslint .",
+    "lint": "node_modules/eslint/bin/eslint.js",
     "lint:fix": "eslint --fix",
     "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
   },
