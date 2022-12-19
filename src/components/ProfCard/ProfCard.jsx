@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './style.module.css';
 import { Link } from 'react-router-dom';
 
-export const ProfCard = ({ id, courseName, color }) => {
+export const ProfCard = ({ id, courseName, color, setColorOnClick }) => {
   const colors = {
     purple: styles.blockPurple,
     blue: styles.blockBlue,
@@ -12,9 +12,8 @@ export const ProfCard = ({ id, courseName, color }) => {
   };
 
   return (
-    //при работе над рендером страницы курса заменить путь в линке с учетом id, а id с div убрать
-    <Link to="yoga" className={colors[color]}>
-      <div id={id}>
+    <Link onClick={setColorOnClick} to={`course/${id}`} className={colors[color]}>
+      <div>
         <p className={styles.name}>{courseName}</p>
       </div>
     </Link>

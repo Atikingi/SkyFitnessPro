@@ -14,7 +14,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainFitnessPage />} />
-      <Route path="yoga" element={<CourseDescription />} />
+      <Route path="course/:id" element={<CourseDescription />} />
       <Route element={<ProtectedRoute isAllowed={Boolean(isLogin)} />}>
         <Route path="profile" element={<UserProfile />}></Route>
         <Route path="profile/progress" element={<CourseProgressPage />}></Route>
