@@ -27,7 +27,6 @@ export const fitnessApi = createApi({
           console.log(e);
         }
       }
-      // query: (id) => `course-page/${id}`
     })
   })
 });
