@@ -21,15 +21,12 @@ const MyCoursesContent = () => {
       isLoading
     })
   });
-  console.log(userCoursesIds);
 
   let themeArr;
 
   if (isSuccess) {
     themeArr = themesGenerator(cardsColors, data);
   }
-
-  console.log('render');
 
   return (
     <div className={styles.cardsBlock}>
