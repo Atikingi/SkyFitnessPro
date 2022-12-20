@@ -5,6 +5,7 @@ import { UIButton } from '../UI/UIButton/UIButton';
 import Logo from '../Logo/Logo';
 import CloseModalIcon from '../Icons/CloseModalIcon';
 import { passwordHandler } from '../../lib/LoginRegistration/passwordHandler';
+import { useAddUserDataMutation } from '../../services/fitnessApi';
 
 export function Registration({ closeModal }) {
   const auth = getAuth();
@@ -19,6 +20,8 @@ export function Registration({ closeModal }) {
   const [passwordError, setError] = useState('Пароль не может быть пустым');
   const [formValid, setFormValid] = useState(false);
   const [loginLoading, setLoginLoading] = useState(false);
+
+  const [trigger] = useAddUserDataMutation();
 
   const loginHandler = (event) => {
     const login = event.target.value;
@@ -62,9 +65,16 @@ export function Registration({ closeModal }) {
   async function createUser() {
     setLoginLoading(true);
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userData = await createUserWithEmailAndPassword(auth, email, password);
+      const userId = userData.user.uid;
+
       await updateProfile(auth.currentUser, {
         displayName: login
+      });
+
+      trigger({
+        id: userId,
+        username: login
       });
 
       setLoginLoading(false);

@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isAuth: false,
+  id: null,
   name: null,
   email: null,
   password: null,
@@ -18,6 +19,7 @@ export const authSlice = createSlice({
       state.token = action.payload.token;
       state.name = action.payload.name;
       state.password = action.payload.password;
+      state.id = action.payload.id;
     },
     updateUsername: (state, action) => {
       state.name = action.payload.name;
@@ -29,8 +31,10 @@ export const authSlice = createSlice({
       state.isAuth = false;
       state.email = null;
       state.token = null;
+      state.id = null;
 
       localStorage.setItem('refreshToken', '');
+      localStorage.setItem('id', '');
     }
   }
 });

@@ -3,5 +3,6 @@
   width: 100%;
   padding-left: calc(50% - 580px);
   padding-right: calc(50% - 580px);
+  padding-bottom: 20px;
   background: #ffffff;
 }
