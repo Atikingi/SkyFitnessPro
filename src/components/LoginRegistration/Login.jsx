@@ -62,6 +62,7 @@ export function Login({ closeModal }) {
 
       dispatch(
         login({
+          id: uid,
           email,
           token: accessToken,
           name: displayName,

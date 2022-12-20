@@ -6,13 +6,11 @@ import Header from '../../components/Header/Header';
 
 const UserProfile = () => {
   return (
-    <>
-      <div className={styles.userProfile}>
-        <Header logoColor="#000000" />
-        <CentralBlock />
-        <MyCoursesBlock />
-      </div>
-    </>
+    <div className={styles.userProfile}>
+      <Header logoColor="#000000" />
+      <CentralBlock />
+      <MyCoursesBlock />
+    </div>
   );
 };
 

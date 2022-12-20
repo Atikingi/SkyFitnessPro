@@ -5,6 +5,7 @@ import { get, child, ref, update, set } from 'firebase/database';
 export const fitnessApi = createApi({
   reducerPath: 'fitnessApi',
   baseQuery: fakeBaseQuery(),
+  tagTypes: ['Course'],
   endpoints: (builder) => ({
     fetchCourses: builder.query({
       async queryFn() {
@@ -17,7 +18,8 @@ export const fitnessApi = createApi({
           console.log(e);
           return { error: e };
         }
-      }
+      },
+      providesTags: ['Course']
     }),
     fetchCoursePage: builder.query({
       async queryFn(id) {
@@ -70,7 +72,23 @@ export const fitnessApi = createApi({
           console.log(e);
           return { error: e };
         }
-      }
+      },
+      invalidatesTags: ['Course']
+    }),
+    fetchUserCourses: builder.query({
+      async queryFn(id) {
+        try {
+          const userCoursesFetch = await get(child(ref(db), `users/${id}/courses`));
+
+          const userCoursesList = Object.values(userCoursesFetch.val());
+
+          return { data: userCoursesList };
+        } catch (e) {
+          console.log(e);
+          return { error: e };
+        }
+      },
+      providesTags: ['Course']
     })
   })
 });
@@ -78,6 +96,7 @@ export const fitnessApi = createApi({
 export const {
   useFetchCoursesQuery,
   useFetchCoursePageQuery,
+  useFetchUserCoursesQuery,
   useAddUserDataMutation,
   useAddCourseForUserMutation
 } = fitnessApi;
