@@ -71,7 +71,7 @@ export function Registration({ closeModal }) {
       await updateProfile(auth.currentUser, {
         displayName: login
       });
-      console.log(userId);
+
       trigger({
         id: userId,
         username: login
