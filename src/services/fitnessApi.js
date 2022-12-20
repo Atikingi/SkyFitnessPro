@@ -1,6 +1,6 @@
 import { createApi, fakeBaseQuery } from '@reduxjs/toolkit/query/react';
 import db from '../firebase';
-import { get, child, ref, set, update } from 'firebase/database';
+import { get, child, ref, update, set } from 'firebase/database';
 
 export const fitnessApi = createApi({
   reducerPath: 'fitnessApi',
@@ -15,6 +15,18 @@ export const fitnessApi = createApi({
           return { data: coursesList };
         } catch (e) {
           console.log(e);
+          return { error: e };
+        }
+      }
+    }),
+    fetchCoursePage: builder.query({
+      async queryFn(id) {
+        try {
+          const courseFetch = await get(child(ref(db), `course/${id}`));
+          return { data: courseFetch.val() };
+        } catch (e) {
+          console.log(e);
+          return { error: e };
         }
       }
     }),
@@ -31,6 +43,7 @@ export const fitnessApi = createApi({
           return { data: newUser };
         } catch (e) {
           console.log(e);
+          return { error: e };
         }
       }
     }),
@@ -55,11 +68,16 @@ export const fitnessApi = createApi({
           return { data: coursesList };
         } catch (e) {
           console.log(e);
+          return { error: e };
         }
       }
     })
   })
 });
 
-export const { useFetchCoursesQuery, useAddUserDataMutation, useAddCourseForUserMutation } =
-  fitnessApi;
+export const {
+  useFetchCoursesQuery,
+  useFetchCoursePageQuery,
+  useAddUserDataMutation,
+  useAddCourseForUserMutation
+} = fitnessApi;

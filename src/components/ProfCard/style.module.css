@@ -60,7 +60,7 @@
   box-shadow: 0 0 10px 10px greenyellow;
 }
 
-.blockAqua{
+.blockAqua {
   composes: blockPurple;
   background-image: url('../../../public/img/kurs-backgroundPicture/blue-green.png');
 }

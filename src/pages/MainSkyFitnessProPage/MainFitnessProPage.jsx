@@ -12,6 +12,10 @@ import Loader from '../../components/Loader/Loader';
 export const MainFitnessPage = () => {
   const { data, isSuccess, isLoading } = useFetchCoursesQuery('');
 
+  function setColorOnClick(color) {
+    localStorage.setItem('color', color);
+  }
+
   let themeArr;
 
   if (isSuccess) {
@@ -26,7 +30,13 @@ export const MainFitnessPage = () => {
         {isLoading && <Loader />}
         {isSuccess &&
           data.map(({ name, _id }, i) => (
-            <ProfCard key={_id} courseName={name} id={_id} color={themeArr[i]} />
+            <ProfCard
+              setColorOnClick={() => setColorOnClick(themeArr[i])}
+              key={_id}
+              courseName={name}
+              id={_id}
+              color={themeArr[i]}
+            />
           ))}
       </div>
       <Footer />

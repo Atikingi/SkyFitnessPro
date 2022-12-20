@@ -1,25 +1,12 @@
 import React from 'react';
 import styles from './style.module.css';
-
-export const Wishes = () => {
-  const index = '1';
-  const wishesText = 'Давно хотели попробовать йогу, но не решались начать.';
+import { WishesItem } from './WishesItem';
+export const Wishes = ({ terms }) => {
   return (
     <div className={styles.wishesBlock}>
-      <div className={styles.wishesNumber}>
-        <h1 className={styles.index}>{index}</h1>
-        <p className={styles.wishesText}>{wishesText}</p>
-      </div>
-
-      <div className={styles.wishesNumber}>
-        <h1 className={styles.index}>{index}</h1>
-        <p className={styles.wishesText}>{wishesText}</p>
-      </div>
-
-      <div className={styles.wishesNumber}>
-        <h1 className={styles.index}>{index}</h1>
-        <p className={styles.wishesText}>{wishesText}</p>
-      </div>
+      {terms.map((el, index) => (
+        <WishesItem key={index} index={index + 1} wishesText={el} />
+      ))}
     </div>
   );
 };
