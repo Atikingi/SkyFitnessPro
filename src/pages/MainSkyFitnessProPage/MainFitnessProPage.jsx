@@ -16,6 +16,13 @@ export const MainFitnessPage = () => {
     localStorage.setItem('color', color);
   }
 
+  function focusTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
   let themeArr;
 
   if (isSuccess) {
@@ -39,7 +46,7 @@ export const MainFitnessPage = () => {
             />
           ))}
       </div>
-      <Footer />
+      <Footer onClick={focusTop} />
     </div>
   );
 };
