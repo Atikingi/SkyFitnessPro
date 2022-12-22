@@ -1,0 +1,79 @@
+.skillCard {
+  width: 1160px;
+  height: 310px;
+  /* background-image: url(../../../../public/img/skill-card/skill-card.png); */
+  /* background-size: 1160px 310px; */
+  border-radius: 30px;
+  background: rgba(205, 205, 205, 0.1);
+  background-repeat: no-repeat;
+  background-position-x: 733px;
+  background-position-y: center;
+}
+.name {
+  padding-top: 50px;
+  margin-left: 50px;
+}
+
+.block {
+  cursor: pointer;
+  display: block;
+  width: 360px;
+  height: 480px;
+  border-radius: 30px;
+  box-shadow: 10px -10px 16px rgba(0, 0, 0, 0.1), -10px 10px 16px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-decoration: none;
+}
+
+.block:active {
+  opacity: 0.5;
+}
+
+.blockPurple {
+  composes: skillCard;
+  background-size: 360px 480px;
+  background-image: url('../../../../public/img/kurs-backgroundPicture/purple.png');
+}
+
+.blockPurple:hover {
+  background-size: 460px 580px;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 0 0 10px 10px rgb(159, 0, 199);
+}
+
+.blockBlue {
+  composes: blockPurple;
+  background-image: url('../../../../public/img/kurs-backgroundPicture/blue.png');
+}
+
+.blockBlue:hover {
+  box-shadow: 0 0 10px 10px blue;
+}
+
+.blockOrange {
+  composes: blockPurple;
+  background-image: url('../../../../public/img/kurs-backgroundPicture/orange.png');
+}
+
+.blockOrange:hover {
+  box-shadow: 0 0 10px 10px orange;
+}
+
+.blockGreen {
+  composes: blockPurple;
+  background-image: url('../../../../public/img/kurs-backgroundPicture/green.png');
+}
+
+.blockGreen:hover {
+  box-shadow: 0 0 10px 10px greenyellow;
+}
+
+.blockAqua {
+  composes: blockPurple;
+  background-image: url('../../../../public/img/kurs-backgroundPicture/blue-green.png');
+}
+
+.blockAqua:hover {
+  box-shadow: 0 0 10px 10px turquoise;
+}

@@ -1,0 +1,35 @@
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: calc(50% - 580px);
+  padding-right: calc(50% - 580px);
+  padding-bottom: 20px;
+  background: #ffffff;
+}
+
+.title {
+  margin-bottom: 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  color: #000000;
+}
+
+.subtitle {
+  margin-bottom: 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  color: #000000;
+}
+
+.progressContentWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 94px;
+}

@@ -1,0 +1,30 @@
+.titleBlock {
+  margin-bottom: 52px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #ffffff;
+
+  opacity: 0.5;
+}
+
+.titleText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  width: 830px;
+  height: 110px;
+
+  color: #f4f4ff;
+}
+
+.img {
+  width: 240px;
+  height: 200px;
+  background-image: url('../../../../public/img/main/SaleSticker.png');
+}

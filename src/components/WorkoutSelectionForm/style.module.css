@@ -1,0 +1,44 @@
+.container {
+  max-width: 444px;
+  padding: 36px 54px 58px 53px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.title {
+  margin-bottom: 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 40px;
+  color: #000000;
+}
+
+.list {
+  max-width: 307px;
+  height: 626px;
+  max-height: 460px;
+  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-end;
+  gap: 12px;
+  overflow-y: scroll;
+}
+
+.list::-webkit-scrollbar {
+  width: 5px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  height: 116px;
+  width: 5px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}

@@ -1,0 +1,34 @@
+.header {
+  width: 100%;
+  margin-bottom: 66px;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  width: 77px;
+  height: 36px;
+  color: #fff;
+
+  background: #140d40;
+  border-radius: 46px;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #2d1f79;
+}
+
+.button:active {
+  background: #3b29a2;
+}

@@ -1,0 +1,78 @@
+body {
+  background-color: #777;
+}
+.newPasswordModal {
+  position: relative;
+  width: 366px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding-top: 40px;
+  border-radius: 12px;
+}
+.newLoginModal {
+  position: relative;
+  width: 366px;
+  height: 330px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding-top: 40px;
+  border-radius: 12px;
+}
+
+.error {
+  position: absolute;
+  top: 80px;
+  left: 40px;
+  color: #a21919;
+  font-weight: 600;
+}
+
+.loadingSpinner {
+  position: absolute;
+  left: calc(50% - 40px);
+  top: calc(50% - 40px);
+  border: 8px solid #807bc9;
+  border-top: 8px solid #231bab;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  animation: spin 2s linear infinite;
+}
+
+.sign {
+  width: 278px;
+  color: #000;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.inputBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+.input {
+  width: 278px;
+  height: 32px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #d0cece;
+  font-size: 24px;
+  line-height: 24px;
+  color: #313131;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}

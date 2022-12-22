@@ -1,0 +1,21 @@
+.main {
+  min-height: 100vh;
+  width: 100%;
+  padding-left: calc(50% - 580px);
+  padding-right: calc(50% - 580px);
+  padding-bottom: 20px;
+  background: #ffffff;
+  position: relative;
+}
+
+.title {
+  margin-top: 75px;
+  margin-bottom: 40px;
+}
+
+.logoCentered {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

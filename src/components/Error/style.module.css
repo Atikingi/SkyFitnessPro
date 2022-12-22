@@ -1,0 +1,9 @@
+.mainBlock {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
