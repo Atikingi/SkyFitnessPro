@@ -51,7 +51,7 @@ export const NewLogin = ({ closeModal }) => {
         placeholder="Логин"
         onChange={loginHandler}
       />
-      <UIButton text="Сохранить" onClick={resetUsername} />
+      <UIButton onClick={resetUsername}>Сохранить</UIButton>
       {error && <div className={styles.error}>{error}</div>}
       {loading && <div className={styles.loadingSpinner}></div>}
     </div>

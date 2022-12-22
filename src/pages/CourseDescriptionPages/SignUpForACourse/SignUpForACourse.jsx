@@ -58,7 +58,7 @@ export const SignUpForACourse = () => {
         </p>
       </div>
       <div className={styles.button}>
-        {isLoading ? <Loader /> : <UIButton text={text} onClick={addCourseHandler}></UIButton>}
+        {isLoading ? <Loader /> : <UIButton onClick={addCourseHandler}>{text}</UIButton>}
       </div>
       {showLoginForm && (
         <UIModal>

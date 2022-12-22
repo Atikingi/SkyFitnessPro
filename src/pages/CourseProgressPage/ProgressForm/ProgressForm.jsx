@@ -12,7 +12,7 @@ const ProgressForm = ({ onSubmit }) => {
       <input className={styles.progressValue} type="number" placeholder="Введите значение" />
       <p className={styles.subtitle}>Сколько раз вы сделали поднятие ног, согнутых в коленях?</p>
       <input className={styles.progressValue} type="number" placeholder="Введите значение" />
-      <UIButton text="Отправить" />
+      <UIButton>Отправить</UIButton>
     </form>
   );
 };
