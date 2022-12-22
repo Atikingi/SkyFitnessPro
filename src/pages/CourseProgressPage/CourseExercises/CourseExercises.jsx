@@ -42,7 +42,7 @@ const CourseExercises = () => {
         <li>Наклон назад (10 повторений)</li>
         <li>Поднятие ног, согнутых в коленях (5 повторений)</li>
       </ul>
-      <UIButton text="Заполнить свой прогресс" onClick={showProgressFormHandle} />
+      <UIButton onClick={showProgressFormHandle}>Заполнить свой прогресс</UIButton>
       {modal}
       {successModal}
     </div>

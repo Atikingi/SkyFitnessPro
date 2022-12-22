@@ -138,7 +138,9 @@ export function Registration({ closeModal }) {
           />
         </div>
         <div className={styles.buttonBlock}>
-          <UIButton disabled={!formValid} onClick={comparePasswords} text="Зарегистрироваться" />
+          <UIButton disabled={!formValid} onClick={comparePasswords}>
+            Зарегистрироваться
+          </UIButton>
         </div>
         {loginLoading && <div className={styles.loadingSpinner}></div>}
       </div>

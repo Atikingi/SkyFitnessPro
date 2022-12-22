@@ -19,8 +19,8 @@ const Buttons = () => {
 
   return (
     <div className={styles.buttons}>
-      <UIButton text="Редактировать логин" onClick={showUsernameModal} />
-      <UIButton text="Редактировать пароль" onClick={showPasswordModal} />
+      <UIButton onClick={showUsernameModal}>Редактировать логин</UIButton>
+      <UIButton onClick={showPasswordModal}>Редактировать пароль</UIButton>
       {showResetUsernameModal && (
         <UIModal>
           <NewLogin closeModal={showUsernameModal} />

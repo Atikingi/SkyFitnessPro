@@ -1,9 +1,9 @@
 import styles from './style.module.css';
 
-export const UIButton = (props) => {
+export const UIButton = ({ children, ...props }) => {
   return (
-    <button className={styles.button} onClick={props.onClick} disabled={props.disabled}>
-      {props.loading ? <div className={styles.loadingSpinner} /> : props.text}
+    <button className={styles.button} {...props}>
+      {props.loading ? <div className={styles.loadingSpinner} /> : children}
     </button>
   );
 };
