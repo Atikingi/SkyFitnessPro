@@ -32,6 +32,52 @@ export const fitnessApi = createApi({
         }
       }
     }),
+    fetchWorkouts: builder.query({
+      async queryFn(id) {
+        try {
+          const courseWorkoutsFetch = await get(child(ref(db), `course/${id}/workouts`));
+          const coursesWorkouts = courseWorkoutsFetch.val();
+
+          const workoutsFetch = await get(child(ref(db), `workout`));
+
+          const workoutsList = Object.values(workoutsFetch.val()).filter((workout) =>
+            coursesWorkouts?.includes(workout._id)
+          );
+
+          return { data: workoutsList };
+        } catch (e) {
+          console.log(e);
+          return { error: e };
+        }
+      }
+    }),
+    fetchExercises: builder.query({
+      async queryFn(id) {
+        try {
+          const workoutFetch = await get(child(ref(db), `workout/${id}`));
+          const workoutExercisesFetch = await get(child(ref(db), `workout/${id}/exercises`));
+
+          const workoutExercises = workoutExercisesFetch.val();
+
+          const exercisesFetch = await get(child(ref(db), `exercise`));
+
+          const exercisesList = Object.values(exercisesFetch.val()).filter((exercise) =>
+            workoutExercises?.includes(exercise._id)
+          );
+
+          return {
+            data: {
+              workoutName: workoutFetch.val().name,
+              workoutVideo: workoutFetch.val().video,
+              exercises: exercisesList
+            }
+          };
+        } catch (e) {
+          console.log(e);
+          return { error: e };
+        }
+      }
+    }),
     addUserData: builder.mutation({
       async queryFn(payload) {
         try {
@@ -89,30 +135,17 @@ export const fitnessApi = createApi({
         }
       },
       providesTags: ['Course']
-    }),
-    allUserCourse: builder.query({
-      async queryFn() {
-        try {
-          const userCoursesFetch = await get(child(ref(db), `workout`));
-
-          const userCoursesList = Object.values(userCoursesFetch.val());
-
-          return { data: userCoursesList };
-        } catch (e) {
-          console.log(e);
-          return { error: e };
-        }
-      },
-      providesTags: ['Course']
     })
   })
 });
 
 export const {
-  useAllUserCourseQuery,
   useFetchCoursesQuery,
+  useLazyFetchWorkoutsQuery,
   useFetchCoursePageQuery,
   useFetchUserCoursesQuery,
+  useFetchExercisesQuery,
+  useLazyFetchCourseWorkoutsQuery,
   useAddUserDataMutation,
   useAddCourseForUserMutation
 } = fitnessApi;

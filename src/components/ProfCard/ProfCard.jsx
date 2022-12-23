@@ -12,7 +12,7 @@ export const ProfCard = ({ id, courseName, color, setColorOnClick }) => {
   };
 
   return (
-    <Link onClick={setColorOnClick} to={`course/${id}`} className={colors[color]}>
+    <Link onClick={setColorOnClick} to={`/course/${id}`} className={colors[color]}>
       <div>
         <p className={styles.name}>{courseName}</p>
       </div>

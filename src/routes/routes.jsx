@@ -17,7 +17,7 @@ const AppRoutes = () => {
       <Route path="course/:id" element={<CourseDescription />} />
       <Route element={<ProtectedRoute isAllowed={Boolean(isLogin)} />}>
         <Route path="profile" element={<UserProfile />}></Route>
-        <Route path="profile/progress" element={<CourseProgressPage />}></Route>
+        <Route path="/course/:id/progress/" element={<CourseProgressPage />}></Route>
       </Route>
     </Routes>
   );

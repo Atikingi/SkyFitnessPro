@@ -5,7 +5,7 @@ import ProgressFormSuccess from '../ProgressFormSuccess/ProgressFormSuccess';
 import UIModal from '../../../components/UI/UIModal/UiModal';
 import ProgressForm from '../ProgressForm/ProgressForm';
 
-const CourseExercises = () => {
+const CourseExercises = ({ exercises }) => {
   const [showProgressForm, setShowProgressForm] = useState(false);
   const [showProgressFormSuccess, setShowProgressFormSuccess] = useState(false);
 
@@ -38,9 +38,9 @@ const CourseExercises = () => {
     <div className={styles.container} onSubmit={submitFormHandle}>
       <h4 className={styles.title}>Упражнения</h4>
       <ul className={styles.list}>
-        <li>Наклон вперед (10 повторений)</li>
-        <li>Наклон назад (10 повторений)</li>
-        <li>Поднятие ног, согнутых в коленях (5 повторений)</li>
+        {exercises.map((exercise) => (
+          <li key={exercise._id}>{`${exercise.name} (${exercise['repeat-count']} повторений)`}</li>
+        ))}
       </ul>
       <UIButton text="Заполнить свой прогресс" onClick={showProgressFormHandle} />
       {modal}
