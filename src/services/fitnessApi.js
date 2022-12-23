@@ -89,11 +89,27 @@ export const fitnessApi = createApi({
         }
       },
       providesTags: ['Course']
+    }),
+    allUserCourse: builder.query({
+      async queryFn() {
+        try {
+          const userCoursesFetch = await get(child(ref(db), `workout`));
+
+          const userCoursesList = Object.values(userCoursesFetch.val());
+
+          return { data: userCoursesList };
+        } catch (e) {
+          console.log(e);
+          return { error: e };
+        }
+      },
+      providesTags: ['Course']
     })
   })
 });
 
 export const {
+  useAllUserCourseQuery,
   useFetchCoursesQuery,
   useFetchCoursePageQuery,
   useFetchUserCoursesQuery,
