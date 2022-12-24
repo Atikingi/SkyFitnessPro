@@ -42,7 +42,7 @@ const CourseExercises = ({ exercises }) => {
           <li key={exercise._id}>{`${exercise.name} (${exercise['repeat-count']} повторений)`}</li>
         ))}
       </ul>
-      <UIButton text="Заполнить свой прогресс" onClick={showProgressFormHandle} />
+      <UIButton onClick={showProgressFormHandle}>Заполнить свой прогресс</UIButton>
       {modal}
       {successModal}
     </div>

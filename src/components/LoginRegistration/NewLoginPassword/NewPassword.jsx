@@ -83,7 +83,7 @@ export const NewPassword = ({ closeModal }) => {
           type="password"
         />
       </div>
-      <UIButton text="Сохранить" onClick={comparePasswords} />
+      <UIButton onClick={comparePasswords}>Сохранить</UIButton>
       {passwordVisited && errorMessage && <div className={styles.error}>{errorMessage}</div>}
       {loading && <div className={styles.loadingSpinner}></div>}
     </div>

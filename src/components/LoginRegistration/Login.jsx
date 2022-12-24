@@ -128,8 +128,10 @@ export function Login({ closeModal }) {
         </div>
         {enterError && <div className={styles.passwordError}>{enterError}</div>}
         <div className={styles.buttonBlock}>
-          <UIButton disabled={!formValid} onClick={enterHandler} text="Войти" />
-          <UIButton onClick={registrationHandler} text="Зарегистрироваться" />
+          <UIButton disabled={!formValid} onClick={enterHandler}>
+            Войти
+          </UIButton>
+          <UIButton onClick={registrationHandler}>Зарегистрироваться</UIButton>
         </div>
         {loginLoading && <div className={styles.loadingSpinner}></div>}
       </div>
