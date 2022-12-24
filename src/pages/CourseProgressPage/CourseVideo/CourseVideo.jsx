@@ -4,8 +4,7 @@ import PlayButtonIcon from '../../../components/Icons/PlayButtonIcon';
 import { useState } from 'react';
 
 const CourseVideo = (workoutVideo) => {
-  console.log(workoutVideo.workoutVideo);
-  const VIDEO_ID = 'UjVtcMD4On4';
+  const VIDEO_ID = workoutVideo.workoutVideo;
   const [showVideo, setShowVideo] = useState(false);
 
   const ClickShowVideo = (event) => {
