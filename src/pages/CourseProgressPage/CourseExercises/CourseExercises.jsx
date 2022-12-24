@@ -24,7 +24,7 @@ const CourseExercises = ({ exercises }) => {
 
   const modal = showProgressForm ? (
     <UIModal>
-      <ProgressForm onSubmit={submitFormHandle} />
+      <ProgressForm exercises={exercises} onSubmit={submitFormHandle} />
     </UIModal>
   ) : null;
 

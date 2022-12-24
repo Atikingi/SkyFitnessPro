@@ -23,7 +23,7 @@ const CourseProgressPage = () => {
       <section>
         <h1 className={styles.title}>{courseName}</h1>
         <h3 className={styles.subtitle}>{data?.workoutName}</h3>
-        <CourseVideo />
+        <CourseVideo workoutVideo={data?.workoutVideo} />
       </section>
       {isSuccess && (
         <section className={styles.progressContentWrapper}>

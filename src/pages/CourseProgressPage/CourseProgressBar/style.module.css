@@ -24,6 +24,24 @@
   border: 2px solid #9a48f1;
 }
 
+.green {
+  background: rgb(37, 143, 51);
+  background: linear-gradient(90deg, rgb(19, 102, 44) 45%, rgba(249, 235, 255, 1) 45%);
+  border: 2px solid #42a342;
+}
+
+.yellow {
+  background: rgb(193, 215, 0);
+  background: linear-gradient(90deg, rgb(208, 245, 59) 45%, rgba(249, 235, 255, 1) 45%);
+  border: 2px solid #e6f764;
+}
+
+.red {
+  background: rgb(255, 27, 27);
+  background: linear-gradient(90deg, rgb(241, 72, 72) 45%, rgba(249, 235, 255, 1) 45%);
+  border: 2px solid #f76464;
+}
+
 .percents {
   position: absolute;
   left: 25%;
