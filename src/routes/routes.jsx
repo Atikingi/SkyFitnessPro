@@ -7,7 +7,7 @@ import CourseProgressPage from '../pages/CourseProgressPage/CourseProgressPage';
 import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { useSelector } from 'react-redux';
 import { getAuthStatus } from '../store/selectors/authSelector';
-import NotFound from '../components/NotFound/NotFound';
+// import NotFound from '../components/NotFound/NotFound';
 
 const AppRoutes = () => {
   const isLogin = useSelector(getAuthStatus);
@@ -20,9 +20,9 @@ const AppRoutes = () => {
 
       <Route element={<ProtectedRoute isAllowed={Boolean(isLogin)} />}>
         <Route path="profile" element={<UserProfile />}></Route>
-        <Route path="profile/progress" element={<CourseProgressPage />}></Route>
+        <Route path="/course/:id/progress/" element={<CourseProgressPage />}></Route>
       </Route>
-      <Route path="*" element={<NotFound />} />
+      {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   );
 };

@@ -6,6 +6,7 @@ export const ButtonGreen = (props) => {
     <button
       className={props.absolute === 'absolute' ? styles.buttonPositioned : styles.button}
       onClick={props.onClick}
+      id={props.id}
     >
       {props.btnText}
     </button>
