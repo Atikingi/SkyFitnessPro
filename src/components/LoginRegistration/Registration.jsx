@@ -6,7 +6,7 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase
 import { useAddUserDataMutation } from '../../services/fitnessApi';
 import { passwordHandler } from '../../lib/LoginRegistration/passwordHandler';
 import styles from './style.module.css';
-
+import { motion } from 'framer-motion';
 export function Registration({ closeModal }) {
   const auth = getAuth();
 
@@ -87,7 +87,13 @@ export function Registration({ closeModal }) {
   }
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className={styles.container}
+    >
       <div className={styles.loginModalBlock}>
         <div className={styles.inputBlock}>
           <Logo color={'#000000'} />
@@ -144,6 +150,6 @@ export function Registration({ closeModal }) {
         </div>
         {loginLoading && <div className={styles.loadingSpinner}></div>}
       </div>
-    </div>
+    </motion.div>
   );
 }

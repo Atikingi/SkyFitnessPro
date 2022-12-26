@@ -8,7 +8,8 @@ import { useParams } from 'react-router-dom';
 import { getUserId } from '../../../store/selectors/authSelector';
 import { useAddCourseForUserMutation } from '../../../services/fitnessApi';
 import styles from './style.module.css';
-
+import { motion } from 'framer-motion';
+import { backdrop } from '../../../constants/animationSettings';
 export const SignUpForACourse = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
 
@@ -47,7 +48,15 @@ export const SignUpForACourse = () => {
       </div>
       {showLoginForm && (
         <UIModal>
-          <Login closeModal={showLoginFormHandle} />
+          <motion.div
+            className="backdrop"
+            variants={backdrop}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            <Login closeModal={showLoginFormHandle} />
+          </motion.div>
         </UIModal>
       )}
     </div>

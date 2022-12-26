@@ -7,7 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { pushArr, updateProgress, writeProgress } from '../../../store/slices/progressSlice';
 import { checkAllProgress } from '../../../store/selectors/progressSelector';
 import styles from './style.module.css';
-
+import { AnimatePresence, motion } from 'framer-motion';
+import { backdrop } from '../../../constants/animationSettings';
 const CourseExercises = ({ exercises, workoutId }) => {
   const [showProgressForm, setShowProgressForm] = useState(false);
   const [showProgressFormSuccess, setShowProgressFormSuccess] = useState(false);
@@ -78,17 +79,26 @@ const CourseExercises = ({ exercises, workoutId }) => {
 
   const modal = showProgressForm ? (
     <UIModal>
-      <ProgressForm
-        exercises={exercises}
-        onSubmit={submitFormHandle}
-        closeModal={showProgressFormHandle}
-      />
+      <motion.div variants={backdrop} initial="hidden" animate="visible" exit="exit">
+        <ProgressForm
+          exercises={exercises}
+          onSubmit={submitFormHandle}
+          closeModal={showProgressFormHandle}
+        />
+      </motion.div>
     </UIModal>
   ) : null;
 
   const successModal = showProgressFormSuccess ? (
     <UIModal>
-      <ProgressFormSuccess id={workoutId} />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <ProgressFormSuccess id={workoutId} />
+      </motion.div>
     </UIModal>
   ) : null;
 
@@ -101,8 +111,10 @@ const CourseExercises = ({ exercises, workoutId }) => {
         ))}
       </ul>
       <UIButton onClick={showProgressFormHandle}>Заполнить свой прогресс</UIButton>
-      {modal}
-      {successModal}
+      <AnimatePresence>
+        {modal}
+        {successModal}
+      </AnimatePresence>
     </div>
   );
 };

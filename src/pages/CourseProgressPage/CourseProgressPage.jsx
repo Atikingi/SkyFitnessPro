@@ -9,7 +9,7 @@ import { getCourseName } from '../../store/selectors/coursesSelector';
 import { useFetchExercisesQuery } from '../../services/fitnessApi';
 import { pushArr } from '../../store/slices/progressSlice';
 import styles from './style.module.css';
-
+import { motion } from 'framer-motion';
 const CourseProgressPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -23,7 +23,13 @@ const CourseProgressPage = () => {
   }, []);
 
   return (
-    <div className={styles.wrapper}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2 }}
+      className={styles.wrapper}
+    >
       <Header logoColor="#000000" />
       <section>
         <h1 className={styles.title}>{courseName}</h1>
@@ -36,7 +42,7 @@ const CourseProgressPage = () => {
           <CourseProgress exercises={data?.exercises} />
         </section>
       )}
-    </div>
+    </motion.div>
   );
 };
 

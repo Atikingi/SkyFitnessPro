@@ -9,14 +9,20 @@ import Loader from '../../components/Loader/Loader';
 import { useFetchCoursePageQuery } from '../../services/fitnessApi';
 import { useParams } from 'react-router-dom';
 import styles from './style.module.css';
-
+import { motion } from 'framer-motion';
 export const CourseDescription = () => {
   const { id } = useParams();
 
   const { data, isSuccess, isLoading, isError } = useFetchCoursePageQuery(id);
 
   return (
-    <div className={styles.main}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2 }}
+      className={styles.main}
+    >
       {isLoading && (
         <div className={styles.logoCentered}>
           <Loader />
@@ -35,6 +41,6 @@ export const CourseDescription = () => {
           <SignUpForACourse />
         </>
       )}
-    </div>
+    </motion.div>
   );
 };
