@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import styles from './style.module.css';
+import CloseModalIcon from '../Icons/CloseModalIcon';
 import { UIButton } from '../UI/UIButton/UIButton';
 import Logo from '../Logo/Logo';
 import UIModal from '../UI/UIModal/UiModal';
 import { Registration } from './Registration';
-import CloseModalIcon from '../Icons/CloseModalIcon';
 import { useDispatch } from 'react-redux';
 import { login } from '../../store/slices/authSlice';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import styles from './style.module.css';
 
 export function Login({ closeModal }) {
   const auth = getAuth();
@@ -72,7 +72,6 @@ export function Login({ closeModal }) {
 
       localStorage.setItem('refreshToken', refreshToken);
       localStorage.setItem('id', uid);
-      console.log(response);
       closeModal();
 
       setPasswordError('');

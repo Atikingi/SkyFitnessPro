@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './styles.module.css';
 import UserDataContent from './UserDataContent/UserDataContent';
+import styles from './styles.module.css';
+
 const UserData = () => {
   return (
     <div className={styles.userDataContainer}>

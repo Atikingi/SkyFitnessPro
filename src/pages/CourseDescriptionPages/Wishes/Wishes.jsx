@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './style.module.css';
 import { WishesItem } from './WishesItem';
+import styles from './style.module.css';
+
 export const Wishes = ({ terms }) => {
   return (
     <div className={styles.wishesBlock}>

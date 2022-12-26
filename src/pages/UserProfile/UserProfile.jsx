@@ -1,8 +1,7 @@
-import React from 'react';
 import CentralBlock from './CentralBlock/CentralBlock';
 import MyCoursesBlock from './MyCoursesBlock/MyCoursesBlock';
-import styles from './style.module.css';
 import Header from '../../components/Header/Header';
+import styles from './style.module.css';
 
 const UserProfile = () => {
   return (

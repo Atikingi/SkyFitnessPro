@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './style.module.css';
 import Logo from '../Logo/Logo';
+import style from './style.module.css';
 
 const NotFound = () => {
   return (

@@ -1,21 +1,26 @@
-import React from 'react';
 import CourseVideo from './CourseVideo/CourseVideo';
 import CourseExercises from './CourseExercises/CourseExercises';
 import CourseProgress from './CourseProgress/CourseProgress';
-import styles from './style.module.css';
 import Header from '../../components/Header/Header';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getCourseName } from '../../store/selectors/coursesSelector';
 import { useFetchExercisesQuery } from '../../services/fitnessApi';
+import { pushArr } from '../../store/slices/progressSlice';
+import styles from './style.module.css';
 
 const CourseProgressPage = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   const courseName = useSelector(getCourseName);
 
   const { data, isSuccess } = useFetchExercisesQuery(id);
-  console.log(data);
+
+  useEffect(() => {
+    dispatch(pushArr({ percent: [] }));
+  }, []);
 
   return (
     <div className={styles.wrapper}>
@@ -27,7 +32,7 @@ const CourseProgressPage = () => {
       </section>
       {isSuccess && (
         <section className={styles.progressContentWrapper}>
-          <CourseExercises exercises={data?.exercises} />
+          <CourseExercises exercises={data?.exercises} workoutId={id} />
           <CourseProgress exercises={data?.exercises} />
         </section>
       )}

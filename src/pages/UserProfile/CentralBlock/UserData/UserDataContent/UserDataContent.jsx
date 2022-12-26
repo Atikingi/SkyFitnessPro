@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './style.module.css';
 import { useSelector } from 'react-redux';
 import { getName, getPassword } from '../../../../../store/selectors/authSelector';
+import styles from './style.module.css';
+
 const UserDataContent = () => {
   const name = useSelector(getName);
   const password = useSelector(getPassword);

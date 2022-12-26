@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
 import { ProfCard } from '../../../../components/ProfCard/ProfCard';
-import styles from './style.module.css';
 import { ButtonGreen } from '../../../../components/ButtonGreen/ButtonGreen';
+import UIModal from '../../../../components/UI/UIModal/UiModal';
 import Loader from '../../../../components/Loader/Loader';
+import WorkoutSelectionForm from '../../../../components/WorkoutSelectionForm/WorkoutSelectionForm';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserId } from '../../../../store/selectors/authSelector';
 import {
   useFetchCoursesQuery,
   useFetchUserCoursesQuery,
   useLazyFetchWorkoutsQuery
 } from '../../../../services/fitnessApi';
+import { getCourseName } from '../../../../store/slices/coursesSlice';
+import { getUserId } from '../../../../store/selectors/authSelector';
 import themesGenerator from '../../../../lib/themesGenerator';
 import { cardsColors } from '../../../../constants/colorsArrays';
-import UIModal from '../../../../components/UI/UIModal/UiModal';
-import WorkoutSelectionForm from '../../../../components/WorkoutSelectionForm/WorkoutSelectionForm';
-import { getCourseName } from '../../../../store/slices/coursesSlice';
+import styles from './style.module.css';
 
 const MyCoursesContent = () => {
   const userId = useSelector(getUserId);

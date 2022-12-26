@@ -1,19 +1,19 @@
 .notFound {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 50px;
-    background-color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  background-color: #fff;
 }
 
 .img {
-    width: 100%;
-    height: 10vh;
-    background: url("../../../public/img/404.jpg") no-repeat center;
+  width: 100%;
+  height: 10vh;
+  background: url('../../../public/img/404.jpg') no-repeat center;
 }
 
 .text {
-    font-size: 3rem;
+  font-size: 3rem;
 }

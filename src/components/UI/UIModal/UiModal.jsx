@@ -1,11 +1,6 @@
-import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { useEffect } from 'react';
 import styles from './style.module.css';
-
-export const clearModal = () => {
-  const mount = document.getElementById('modal');
-  mount.innerHTML = '';
-};
 
 const UIModal = ({ children }) => {
   const mount = document.getElementById('modal');

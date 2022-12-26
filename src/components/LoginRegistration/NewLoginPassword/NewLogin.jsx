@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styles from './style.module.css';
 import Logo from '../../Logo/Logo';
-import { UIButton } from '../../UI/UIButton/UIButton';
 import CloseModalIcon from '../../Icons/CloseModalIcon';
-import { getAuth, updateProfile } from 'firebase/auth';
+import { UIButton } from '../../UI/UIButton/UIButton';
 import { useDispatch } from 'react-redux';
+import { getAuth, updateProfile } from 'firebase/auth';
 import { updateUsername } from '../../../store/slices/authSlice';
+import styles from './style.module.css';
 
 export const NewLogin = ({ closeModal }) => {
   const dispatch = useDispatch();
