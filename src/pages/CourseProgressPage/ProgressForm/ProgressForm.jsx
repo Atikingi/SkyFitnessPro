@@ -1,20 +1,28 @@
-import React from 'react';
-import styles from './style.module.css';
 import { UIButton } from '../../../components/UI/UIButton/UIButton';
+import CloseModalIcon from '../../../components/Icons/CloseModalIcon';
+import styles from './style.module.css';
 
-const ProgressForm = ({ onSubmit, exercises }) => {
+const ProgressForm = ({ onSubmit, exercises, closeModal }) => {
   return (
     <form className={styles.progressForm} onSubmit={onSubmit}>
+      <div className={styles.closeButton} onClick={closeModal}>
+        <CloseModalIcon />
+      </div>
       <h2 className={styles.title}>Мой прогресс</h2>
-      {exercises.map((exercise) => (
-        <div key={exercise._id}>
-          <p
-            className={styles.subtitle}
-          >{`Сколько раз вы выполнили упражнение: ${exercise.name}`}</p>
-          <input className={styles.progressValue} type="number" placeholder="Введите значение" />
-        </div>
+      {exercises.map(({ _id, name }) => (
+        <label key={_id} htmlFor={_id} className={styles.subtitle}>
+          {`Сколько раз вы выполнили упражнение: ${name}`}
+          <input
+            className={styles.progressValue}
+            name={_id}
+            id={_id}
+            type="number"
+            placeholder="Введите значение"
+            required
+          />
+        </label>
       ))}
-      <UIButton text="Отправить" />
+      <UIButton>Отправить</UIButton>
     </form>
   );
 };

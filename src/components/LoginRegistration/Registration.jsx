@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import styles from './style.module.css';
 import { UIButton } from '../UI/UIButton/UIButton';
 import Logo from '../Logo/Logo';
 import CloseModalIcon from '../Icons/CloseModalIcon';
-import { passwordHandler } from '../../lib/LoginRegistration/passwordHandler';
+import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useAddUserDataMutation } from '../../services/fitnessApi';
+import { passwordHandler } from '../../lib/LoginRegistration/passwordHandler';
+import styles from './style.module.css';
 
 export function Registration({ closeModal }) {
   const auth = getAuth();

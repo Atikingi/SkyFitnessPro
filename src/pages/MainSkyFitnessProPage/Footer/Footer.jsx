@@ -1,6 +1,5 @@
-import React from 'react';
-import styles from './style.module.css';
 import { ButtonGreen } from '../../../components/ButtonGreen/ButtonGreen';
+import styles from './style.module.css';
 
 export const Footer = (props) => {
   const btnText = 'Наверх ↑';

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import styles from './style.module.css';
 import Logo from '../../Logo/Logo';
 import { UIButton } from '../../UI/UIButton/UIButton';
 import CloseModalIcon from '../../Icons/CloseModalIcon';
 import { getAuth, updatePassword } from 'firebase/auth';
-import { passwordHandler } from '../../../lib/LoginRegistration/passwordHandler';
 import { useDispatch } from 'react-redux';
 import { resetPassword } from '../../../store/slices/authSlice';
+import { passwordHandler } from '../../../lib/LoginRegistration/passwordHandler';
+import styles from './style.module.css';
 
 export const NewPassword = ({ closeModal }) => {
   const auth = getAuth();

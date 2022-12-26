@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Logo from '../Logo/Logo';
+import { Login } from '../LoginRegistration/Login';
 import LoginAvatarBlock from '../LoginAvatar/LoginAvatarBlock';
-import styles from './style.module.css';
+import UIModal from '../UI/UIModal/UiModal';
 import { useSelector } from 'react-redux';
 import { getAuthStatus } from '../../store/selectors/authSelector';
-import UIModal from '../UI/UIModal/UiModal';
-import { Login } from '../LoginRegistration/Login';
+import styles from './style.module.css';
 
 const Header = ({ logoColor, lightColor }) => {
   const [showLoginForm, setShowLoginForm] = useState(false);

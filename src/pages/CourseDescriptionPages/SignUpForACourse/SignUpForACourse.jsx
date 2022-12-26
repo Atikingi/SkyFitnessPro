@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
-import styles from './style.module.css';
 import { UIButton } from '../../../components/UI/UIButton/UIButton';
-import { useAddCourseForUserMutation } from '../../../services/fitnessApi';
 import Loader from '../../../components/Loader/Loader';
-import { useSelector } from 'react-redux';
-import { getUserId } from '../../../store/selectors/authSelector';
-import { useParams } from 'react-router-dom';
 import UIModal from '../../../components/UI/UIModal/UiModal';
 import { Login } from '../../../components/LoginRegistration/Login';
-// import SuccessfullyAdding from '../../../components/SuccessfullyAdding/SuccessfullyAdding';
-
-// const [showSuccessModal, setShowSuccessModal] = useState(false);
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getUserId } from '../../../store/selectors/authSelector';
+import { useAddCourseForUserMutation } from '../../../services/fitnessApi';
+import styles from './style.module.css';
 
 export const SignUpForACourse = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -18,14 +15,6 @@ export const SignUpForACourse = () => {
   const showLoginFormHandle = () => {
     setShowLoginForm((prevState) => !prevState);
   };
-
-  // const showSuccessModalHandle = () => {
-  //   setTimeout(() => {
-  //     setShowSuccessModal(() => false);
-  //   }, 2000);
-  //
-  //   return setShowSuccessModal(() => true);
-  // };
 
   const text = 'Добавить курс';
 
@@ -45,10 +34,6 @@ export const SignUpForACourse = () => {
     });
   };
 
-  // if (isSuccess && !showSuccessModal) {
-  //   showSuccessModalHandle();
-  // }
-
   return (
     <div className={styles.block}>
       <div className={styles.content}>
@@ -65,11 +50,6 @@ export const SignUpForACourse = () => {
           <Login closeModal={showLoginFormHandle} />
         </UIModal>
       )}
-      {/*{showSuccessModal && (*/}
-      {/*  <UIModal>*/}
-      {/*    <SuccessfullyAdding />*/}
-      {/*  </UIModal>*/}
-      {/*)}*/}
     </div>
   );
 };

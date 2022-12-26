@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import styles from './style.module.css';
+import { useState } from 'react';
 import { UIButton } from '../../../../components/UI/UIButton/UIButton';
 import UIModal from '../../../../components/UI/UIModal/UiModal';
 import { NewLogin } from '../../../../components/LoginRegistration/NewLoginPassword/NewLogin';
 import { NewPassword } from '../../../../components/LoginRegistration/NewLoginPassword/NewPassword';
+import styles from './style.module.css';
 
 const Buttons = () => {
   const [showResetPasswordModal, setShowResetPasswordModal] = useState(false);

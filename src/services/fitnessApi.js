@@ -135,6 +135,20 @@ export const fitnessApi = createApi({
         }
       },
       providesTags: ['Course']
+    }),
+    addWorkoutDoneStatus: builder.mutation({
+      async queryFn(id) {
+        try {
+          const workoutRef = ref(db, 'workout/' + id);
+
+          await update(workoutRef, { status: 'done' });
+
+          return { data: 'done' };
+        } catch (e) {
+          console.log(e);
+          return { error: e };
+        }
+      }
     })
   })
 });
@@ -145,7 +159,7 @@ export const {
   useFetchCoursePageQuery,
   useFetchUserCoursesQuery,
   useFetchExercisesQuery,
-  useLazyFetchCourseWorkoutsQuery,
+  useAddWorkoutDoneStatusMutation,
   useAddUserDataMutation,
   useAddCourseForUserMutation
 } = fitnessApi;

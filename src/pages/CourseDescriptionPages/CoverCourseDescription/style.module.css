@@ -1,11 +1,8 @@
 .skillCard {
   width: 1160px;
   height: 310px;
-  /* background-image: url(../../../../public/img/skill-card/skill-card.png); */
-  /* background-size: 1160px 310px; */
   border-radius: 30px;
-  background: rgba(205, 205, 205, 0.1);
-  background-repeat: no-repeat;
+  background: rgba(205, 205, 205, 0.1) no-repeat;
   background-position-x: 733px;
   background-position-y: center;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './style.module.css';
 import { Link } from 'react-router-dom';
+import styles from './style.module.css';
 
 export const ProfCard = ({ id, courseName, color, setColorOnClick }) => {
   const colors = {
