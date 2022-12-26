@@ -135,7 +135,7 @@ export function Login({ closeModal }) {
         {loginLoading && <div className={styles.loadingSpinner}></div>}
       </div>
       {showRegistrationForm && (
-        <UIModal>
+        <UIModal showRegistrationForm={showRegistrationForm}>
           <Registration closeModal={closeRegistrationForm} />
         </UIModal>
       )}

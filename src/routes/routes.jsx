@@ -7,23 +7,25 @@ import NotFound from '../components/NotFound/NotFound';
 import { useSelector } from 'react-redux';
 import { ProtectedRoute } from '../components/ProtectedRoute/ProtectedRoute';
 import { getAuthStatus } from '../store/selectors/authSelector';
-
+import { AnimatePresence } from 'framer-motion';
 const AppRoutes = () => {
   const isLogin = useSelector(getAuthStatus);
 
   return (
-    <Routes>
-      <Route path="/" element={<MainFitnessPage />}></Route>
+    <AnimatePresence>
+      <Routes>
+        <Route path="/" element={<MainFitnessPage />}></Route>
 
-      <Route path="course/:id" element={<CourseDescription />} />
+        <Route path="course/:id" element={<CourseDescription />} />
 
-      <Route element={<ProtectedRoute isAllowed={Boolean(isLogin)} />}>
-        <Route path="profile" element={<UserProfile />}></Route>
-        <Route path="/course/:id/progress/" element={<CourseProgressPage />} />
-      </Route>
+        <Route element={<ProtectedRoute isAllowed={Boolean(isLogin)} />}>
+          <Route path="profile" element={<UserProfile />}></Route>
+          <Route path="/course/:id/progress/" element={<CourseProgressPage />} />
+        </Route>
 
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
   );
 };
 

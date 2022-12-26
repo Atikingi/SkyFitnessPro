@@ -15,6 +15,8 @@ import { getUserId } from '../../../../store/selectors/authSelector';
 import themesGenerator from '../../../../lib/themesGenerator';
 import { cardsColors } from '../../../../constants/colorsArrays';
 import styles from './style.module.css';
+import { AnimatePresence, motion } from 'framer-motion';
+import { backdrop } from '../../../../constants/animationSettings';
 
 const MyCoursesContent = () => {
   const userId = useSelector(getUserId);
@@ -70,11 +72,15 @@ const MyCoursesContent = () => {
             />
           </div>
         ))}
-      {showWorkoutsSelect && workoutsSuccess && (
-        <UIModal>
-          <WorkoutSelectionForm closeModal={showWorkoutsSelectHandler} workouts={workouts} />
-        </UIModal>
-      )}
+      <AnimatePresence>
+        {showWorkoutsSelect && workoutsSuccess && (
+          <UIModal>
+            <motion.div variants={backdrop} initial="hidden" animate="visible" exit="exit">
+              <WorkoutSelectionForm closeModal={showWorkoutsSelectHandler} workouts={workouts} />
+            </motion.div>
+          </UIModal>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
