@@ -1,14 +1,13 @@
-import React from 'react';
 import Header from '../../components/Header/Header';
 import { Title } from './Title/Title';
 import { ProfCard } from '../../components/ProfCard/ProfCard';
 import { Footer } from './Footer/Footer';
-import styles from './style.module.css';
+import Loader from '../../components/Loader/Loader';
 import { useFetchCoursesQuery } from '../../services/fitnessApi';
 import themesGenerator from '../../lib/themesGenerator';
 import { cardsColors } from '../../constants/colorsArrays';
-import Loader from '../../components/Loader/Loader';
-
+import { motion } from 'framer-motion';
+import styles from './style.module.css';
 export const MainFitnessPage = () => {
   const { data, isSuccess, isLoading } = useFetchCoursesQuery('');
 
@@ -30,7 +29,13 @@ export const MainFitnessPage = () => {
   }
 
   return (
-    <div className={styles.main}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2 }}
+      className={styles.main}
+    >
       <Header logoColor="#ffffff" lightColor={true} />
       <Title />
       <div className={styles.cardsBlock}>
@@ -47,6 +52,6 @@ export const MainFitnessPage = () => {
           ))}
       </div>
       <Footer onClick={focusTop} />
-    </div>
+    </motion.div>
   );
 };

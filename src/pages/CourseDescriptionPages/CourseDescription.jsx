@@ -1,23 +1,28 @@
-import React from 'react';
 import { CoverCourseDescription } from './CoverCourseDescription/CoverCourseDescription';
 import { Wishes } from './Wishes/Wishes';
 import { CourseDirections } from './CourseDirections/CourseDirections';
 import { Description } from './Description/Description';
 import { SignUpForACourse } from './SignUpForACourse/SignUpForACourse';
-import styles from './style.module.css';
+import { Error } from '../../components/Error/Error';
 import Header from '../../components/Header/Header';
+import Loader from '../../components/Loader/Loader';
 import { useFetchCoursePageQuery } from '../../services/fitnessApi';
 import { useParams } from 'react-router-dom';
-import Loader from '../../components/Loader/Loader';
-import { Error } from '../../components/Error/Error';
-
+import styles from './style.module.css';
+import { motion } from 'framer-motion';
 export const CourseDescription = () => {
   const { id } = useParams();
 
   const { data, isSuccess, isLoading, isError } = useFetchCoursePageQuery(id);
 
   return (
-    <div className={styles.main}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2 }}
+      className={styles.main}
+    >
       {isLoading && (
         <div className={styles.logoCentered}>
           <Loader />
@@ -36,6 +41,6 @@ export const CourseDescription = () => {
           <SignUpForACourse />
         </>
       )}
-    </div>
+    </motion.div>
   );
 };

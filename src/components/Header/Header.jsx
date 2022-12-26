@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Logo from '../Logo/Logo';
+import { Login } from '../LoginRegistration/Login';
 import LoginAvatarBlock from '../LoginAvatar/LoginAvatarBlock';
-import styles from './style.module.css';
+import UIModal from '../UI/UIModal/UiModal';
 import { useSelector } from 'react-redux';
 import { getAuthStatus } from '../../store/selectors/authSelector';
-import UIModal from '../UI/UIModal/UiModal';
-import { Login } from '../LoginRegistration/Login';
-
+import { backdrop } from '../../constants/animationSettings';
+import { motion, AnimatePresence } from 'framer-motion';
+import styles from './style.module.css';
 const Header = ({ logoColor, lightColor }) => {
   const [showLoginForm, setShowLoginForm] = useState(false);
 
@@ -26,11 +27,15 @@ const Header = ({ logoColor, lightColor }) => {
           Войти
         </button>
       )}
-      {showLoginForm && (
-        <UIModal>
-          <Login closeModal={showLoginFormHandle} />
-        </UIModal>
-      )}
+      <AnimatePresence>
+        {showLoginForm && (
+          <UIModal>
+            <motion.div variants={backdrop} initial="hidden" animate="visible" exit="exit">
+              <Login closeModal={showLoginFormHandle} />
+            </motion.div>
+          </UIModal>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import styles from './style.module.css';
+import { useState } from 'react';
 import { UIButton } from '../../../../components/UI/UIButton/UIButton';
 import UIModal from '../../../../components/UI/UIModal/UiModal';
 import { NewLogin } from '../../../../components/LoginRegistration/NewLoginPassword/NewLogin';
 import { NewPassword } from '../../../../components/LoginRegistration/NewLoginPassword/NewPassword';
+import styles from './style.module.css';
+import { AnimatePresence, motion } from 'framer-motion';
+import { backdrop } from '../../../../constants/animationSettings';
 
 const Buttons = () => {
   const [showResetPasswordModal, setShowResetPasswordModal] = useState(false);
@@ -21,16 +23,25 @@ const Buttons = () => {
     <div className={styles.buttons}>
       <UIButton onClick={showUsernameModal}>Редактировать логин</UIButton>
       <UIButton onClick={showPasswordModal}>Редактировать пароль</UIButton>
-      {showResetUsernameModal && (
-        <UIModal>
-          <NewLogin closeModal={showUsernameModal} />
-        </UIModal>
-      )}
-      {showResetPasswordModal && (
-        <UIModal>
-          <NewPassword closeModal={showPasswordModal} />
-        </UIModal>
-      )}
+      <AnimatePresence>
+        {showResetUsernameModal && (
+          <UIModal>
+            <motion.div variants={backdrop} initial="hidden" animate="visible" exit="exit">
+              <NewLogin closeModal={showUsernameModal} />
+            </motion.div>
+          </UIModal>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {showResetPasswordModal && (
+          <UIModal>
+            <motion.div variants={backdrop} initial="hidden" animate="visible" exit="exit">
+              <NewPassword closeModal={showPasswordModal} />
+            </motion.div>
+          </UIModal>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

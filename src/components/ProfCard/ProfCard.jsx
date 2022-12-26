@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './style.module.css';
 import { Link } from 'react-router-dom';
+import styles from './style.module.css';
 
 export const ProfCard = ({ id, courseName, color, setColorOnClick }) => {
   const colors = {
@@ -12,7 +12,7 @@ export const ProfCard = ({ id, courseName, color, setColorOnClick }) => {
   };
 
   return (
-    <Link onClick={setColorOnClick} to={`course/${id}`} className={colors[color]}>
+    <Link onClick={setColorOnClick} to={`/course/${id}`} className={colors[color]}>
       <div>
         <p className={styles.name}>{courseName}</p>
       </div>

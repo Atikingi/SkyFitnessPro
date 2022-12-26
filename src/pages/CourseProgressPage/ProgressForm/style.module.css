@@ -1,4 +1,5 @@
 .progressForm {
+  position: relative;
   max-width: 444px;
   padding: 36px 42px 44px 41px;
   display: flex;
@@ -57,4 +58,11 @@
 .progressValue::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }

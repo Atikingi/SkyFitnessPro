@@ -1,19 +1,12 @@
-import React, { useState } from 'react';
-import styles from './style.module.css';
 import WorkoutDoneIcon from '../../Icons/WorkoutDoneIcon';
+import styles from './style.module.css';
 
-const WorkoutItem = ({ title, subtitle }) => {
-  const [isDone, setIsDone] = useState(false);
-
-  const setDoneHandle = () => {
-    setIsDone(!isDone);
-  };
-
+const WorkoutItem = ({ title, subtitle, status }) => {
   return (
-    <div className={isDone ? styles.activeContainer : styles.container} onClick={setDoneHandle}>
-      <h3 className={isDone ? styles.activeTitle : styles.title}>{title}</h3>
-      <p className={isDone ? styles.activeSubtitle : styles.subtitle}>{subtitle}</p>
-      {isDone && (
+    <div className={status ? styles.activeContainer : styles.container}>
+      <h3 className={status ? styles.activeTitle : styles.title}>{title}</h3>
+      <p className={status ? styles.activeSubtitle : styles.subtitle}>{subtitle}</p>
+      {status && (
         <div className={styles.icon}>
           <WorkoutDoneIcon />
         </div>

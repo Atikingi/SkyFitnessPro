@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Avatar from './Avatar/Avatar';
 import Name from './Name/Name';
-import styles from './style.module.css';
 import LogoutButton from './LogoutButton/LogoutButton';
-import { Link } from 'react-router-dom';
+import styles from './style.module.css';
 
 const LoginAvatarBlock = ({ lightColor }) => {
   return (
